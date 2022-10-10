@@ -1,0 +1,13 @@
+package exPOO09;
+
+public class Velha {
+	public String[][] velha = {	{"  ", "  ", "  "},
+								{"  ", "  ", "  "},
+								{"  ", "  ", "  "}};
+	
+	
+	public void marcaPonto(boolean turno, String posicao) {
+		
+	}
+
+}

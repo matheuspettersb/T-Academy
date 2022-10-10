@@ -1,0 +1,56 @@
+package Avaliacao;
+
+import javax.swing.JOptionPane;
+
+public class Editora extends Modelo {
+	private String nome;
+	private int anoCriacao;
+
+	@Override
+	public Editora cadastrar() {
+		String n = JOptionPane.showInputDialog("Informe o nome da editora");
+		int a = Integer.parseInt(JOptionPane.showInputDialog("Informe o ano de ciação da editora"));
+		Editora e = new Editora(n,a);
+		return null;
+	}
+
+	@Override
+	public Editora selecionar() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Editora alterar() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Editora remover() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Editora(String nome, int anoCriacao) {
+		this.setNome(nome);
+		this.setAnoCriacao(anoCriacao);
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public int getAnoCriacao() {
+		return anoCriacao;
+	}
+
+	public void setAnoCriacao(int anoCriacao) {
+		this.anoCriacao = anoCriacao;
+	}
+
+}

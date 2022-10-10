@@ -1,0 +1,17 @@
+package exPOO06;
+
+
+public class Operacoes {
+	
+	//poderia usar Array.Sort, mas vamo na mão
+	public int[] ascendente(int[] vetor) {
+		for (int i=0; i<vetor.length; i++)
+		return vetor;
+	}
+	
+	public int[] decrescente(int[] vetor) {
+		
+		return vetor;
+	}
+
+}

@@ -1,0 +1,14 @@
+package Ex01;
+
+public class Pessoa {
+	String nome;
+	int idade;
+	double altura;
+	
+	public void descrever() {
+		altura = 1.80;
+		nome = "Mauro Imoveis";
+		idade = 23;
+		System.out.println("Nome: "+nome+"\nIdade: "+idade+"\nAltura: "+altura);
+	}
+}

@@ -1,0 +1,12 @@
+package exPOO;
+
+import java.util.ArrayList;
+
+public abstract class ContatoAbstrato {
+	
+	public abstract void cadastrar(String nome, long telefone);
+	public abstract void listar(ArrayList contatos);
+	public abstract void pesquisar(String nome);
+	public abstract void alterar();
+	public abstract void remover();
+}

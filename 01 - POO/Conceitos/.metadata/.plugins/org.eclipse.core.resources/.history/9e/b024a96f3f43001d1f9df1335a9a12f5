@@ -1,0 +1,9 @@
+package ex11;
+
+public class Pessoa {
+	private String nome;
+	private int idade;
+	
+	
+
+}

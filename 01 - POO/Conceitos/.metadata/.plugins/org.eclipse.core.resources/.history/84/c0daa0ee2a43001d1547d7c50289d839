@@ -1,0 +1,7 @@
+package Ex05;
+
+public class Colaborador {
+	private String nome;
+	private int idade;
+	
+}

@@ -1,0 +1,56 @@
+package Avaliacao;
+
+import javax.swing.JOptionPane;
+
+public class Main {
+	/*	Método principal do projeto, roda o sistema.
+		O projeto simula um sistema de "livraria" ou armazém de histórias em quadrinhos.
+		O sistema conta com 5 classes:
+			- Sistema 	> Classe principal que faz a maioria das operações sobre as classes Comic e Editora.
+			- Comic 	> Classe com as informações dos objetos que serão operados pelo sistema.
+			- Editora 	> Classe com as informações sobre a editora das comics.
+			- Modelo	> Classe com métodos abstratos implementados por Comic e Editora.
+			- Main 		> roda a coisa toda.
+	*/
+	public static void main(String[] args) {
+		Sistema s = new Sistema();
+		String escolha;
+
+		do {
+			String menu = JOptionPane.showInputDialog("Olá, bem vindo ao sistema de registro de Comics.\nDigite o número da operação:" 
+							+ "\n1. CADASTRAR EDITORA" + "\n2. LISTAR EDITORAS"
+							+ "\n3. ALTERAR EDITORA" + "\n4. REMOVER EDITORA" 
+							+ "\n5. CADASTRAR COMIC" + "\n6. LISTAR COMICS" 
+							+ "\n7. ALTERAR COMIC" + "\n8. REMOVER COMIC" 
+							+ "\n\n413. SAIR");
+			escolha = menu;
+
+			switch (escolha) {
+			case "1":
+				s.cadastrarEditora();
+				break;
+			case "2":
+				break;
+			case "3":
+				break;
+			case "4":
+				break;
+			case "5":
+				break;
+			case "6":
+				break;
+			case "7":
+				break;
+			case "8":
+				break;
+			case "413":
+				JOptionPane.showMessageDialog(null, "Obrigado por utilizar, até mais!");
+				break;
+			default:
+				JOptionPane.showMessageDialog(null, "Infome um número válido para realizar a operação");
+				break;
+			}
+		} while (!escolha.equals("413"));
+	}
+
+}

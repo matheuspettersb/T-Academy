@@ -1,0 +1,8 @@
+package Ex06;
+
+public class Class1 {
+	
+	public Class1() {
+		System.out.println("Danonão");
+	}
+}

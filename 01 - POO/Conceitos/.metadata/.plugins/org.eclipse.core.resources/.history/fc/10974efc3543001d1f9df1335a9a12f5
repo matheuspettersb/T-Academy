@@ -1,0 +1,15 @@
+package Ex05;
+
+import javax.swing.JOptionPane;
+
+public class Colaborador {
+	private String nome;
+	private int idade;
+	
+	private void getDadosColaborador() {
+		nome = JOptionPane.showInputDialog("Informe o nome");
+		idade = Integer.parseInt(JOptionPane.showInputDialog("Informe a idade"));
+	}
+	
+	
+}

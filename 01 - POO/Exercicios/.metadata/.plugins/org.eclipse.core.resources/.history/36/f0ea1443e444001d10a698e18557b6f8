@@ -1,0 +1,178 @@
+package Avaliacao;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import javax.swing.JOptionPane;
+
+//Explicação do projeto na classe main
+public class Sistema {
+	private HashMap<String, Comic> listaComics = new HashMap<>();
+	private ArrayList<Editora> editoras = new ArrayList<>();
+
+	public void cadastraComic() {
+		// fazer o select editora antes
+	}
+
+	// métodos de operação na classe editora
+	// método de cadastro da editora
+	public void cadastrarEditora() {
+		boolean teste = false;
+		int ano = 0;
+		String nome = "";
+
+		while (teste == false) {
+			nome = JOptionPane.showInputDialog("Informe o nome da editora");
+			teste = validaNomeEditora(nome);
+		}
+
+		teste = false;
+		while (teste == false) {
+			ano = Integer.parseInt(JOptionPane.showInputDialog("Informe o ano de criação da editora"));
+			teste = validaAnoEditora(ano);
+		}
+
+		Editora e = new Editora(nome, ano);
+		this.getEditoras().add(e);
+		JOptionPane.showMessageDialog(null, "Editora cadastrada com sucesso!");
+	}
+
+	// metodo que lista as Editoras cadastradas
+	public void listarEditora() {
+		String str = "###	EDITORAS CADASTRADAS	###\n\n";
+		for (Editora e : getEditoras()) {
+			str +="----------------------------------\n";
+			str += e.emTexto();
+		}
+		if (str.equals("###	EDITORAS CADASTRADAS	###\n\n")) {
+			JOptionPane.showMessageDialog(null, "Nenhuma editora cadastrada");
+		}
+		JOptionPane.showConfirmDialog(null, str);
+	}
+	
+	public void alterarEditora() {
+		String str = "###	EDITORAS CADASTRADAS	###\n\n";
+		for (Editora e : getEditoras()) {
+			str +="----------------------------------\n";
+			str += e.emTexto();
+		}
+		if (str.equals("###	EDITORAS CADASTRADAS	###\n\n")) {
+			JOptionPane.showMessageDialog(null, "Nenhuma editora cadastrada"); //para aqui se n tiver nada cadastrado
+		} else {
+			str+="\n Informe o nome da Editora que será editada";
+			String nomeProcurado = JOptionPane.showInputDialog(null, str);
+			if (!verificaExistenciaEditora(nomeProcurado)) {
+				String n = JOptionPane.showInputDialog(null, "Informe o novo nome");
+				int a = Integer.parseInt(JOptionPane.showInputDialog(null, "Informe o novo ano de criação"));
+				if (!validaNomeEditora(n) || !validaAnoEditora(a)) {
+					JOptionPane.showMessageDialog(null, "Dados inválidos");
+				} else {
+					for (int i=0; i<getEditoras().size();i++) {
+						if (getEditoras().get(i).getNome().equals(nomeProcurado)) {
+							getEditoras().get(i).setAnoCriacao(a);
+							getEditoras().get(i).setNome(n);
+							JOptionPane.showMessageDialog(null, "Alterado com sucesso!");
+						}
+					}
+				}
+				
+			} else {
+				JOptionPane.showMessageDialog(null, "Editora já cadastrada");
+			}
+			
+		}
+	}
+
+	// métodos de validação:
+	//método que verifica se a editora existe na lista
+	public boolean verificaExistenciaEditora(String nome) {
+		for (Editora e : getEditoras()) {
+			if (e.getNome().equals(nome)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	
+	// método que faz a validação do nome inserido pra editora
+	public boolean validaNomeEditora(String nome) {
+		if (nome.isEmpty() || nome.isBlank()) {
+			return false;
+		}
+		for (int i = 0; i < getEditoras().size(); i++) {
+			if (nome.equals(getEditoras().get(i).getNome())) {
+				JOptionPane.showMessageDialog(null, "Essa editora já foi cadastrada");
+				return false;
+			}
+		}
+		return true;
+	}
+
+	// método que faz a validação do nome inserido pra comic ou editora
+	public boolean validaNomeComic(String nome) {
+		if (nome.isEmpty() || nome.isBlank()) {
+			return false;
+		}
+		if (getListaComics().containsKey(nome)) {
+			JOptionPane.showMessageDialog(null, "Essa comic já foi cadastrada");
+			return false;
+		}
+		return true;
+	}
+
+	/*
+	 * O método abaixo faz a validação do ano inserido para registro da editora O
+	 * ano ultilizado como parametro mínimo é o ano de criação da New York World, o
+	 * jornal que publicou The Yellow Kid in McFadden's Flats. O valor máximo para
+	 * ano é o ano atual.
+	 */
+	public boolean validaAnoEditora(int ano) {
+		if (ano < 1860 || ano > LocalDate.now().getYear()) {
+			return false;
+		}
+		return true;
+	}
+
+	/*
+	 * O método abaixo faz a validação do ano inserido para registro da comic O ano
+	 * ultilizado como parametro mínimo é o ano de lançamento de
+	 * "The Yellow Kid in McFadden's Flats", que é considerado o primeiro comic book
+	 * da história. O valor máximo para ano é o ano atual+10 (no caso de hoje, 2032)
+	 * para que seja possivel cadastrar comics que ainda não saíram mas que estejam
+	 * planejadas para os próximos 10 anos
+	 */
+	public boolean validaAnoComic(int ano) {
+		if (ano < 1897 || ano > (LocalDate.now().getYear() + 10)) {
+			return false;
+		}
+		return true;
+	}
+
+	// método constutor da classe, inicializa as estuturas que armazenarão os dados
+	public Sistema() {
+		HashMap<String, Comic> listaComics = new HashMap<>();
+		ArrayList<Editora> editoras = new ArrayList<Editora>();
+		setListaComics(listaComics);
+		setEditoras(editoras);
+	}
+
+	// métodos get/set dos atributos da classe
+	public HashMap<String, Comic> getListaComics() {
+		return listaComics;
+	}
+
+	public void setListaComics(HashMap<String, Comic> listaComics) {
+		this.listaComics = listaComics;
+	}
+
+	public ArrayList<Editora> getEditoras() {
+		return editoras;
+	}
+
+	public void setEditoras(ArrayList<Editora> editoras) {
+		this.editoras = editoras;
+	}
+
+}

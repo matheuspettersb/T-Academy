@@ -1,0 +1,24 @@
+package exPOO03;
+
+public class Calendario {
+	private int dia;
+	private int mes;
+	private int ano;
+	
+	private int[] diasMeses = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+	private int[] dias;
+
+	
+	public int dia(int dia) {
+		return dia;
+	}
+	
+	public int ano
+	
+	public boolean isBissexto(int ano) {
+		if (ano%4!=0) {
+			return false;
+		}
+		return true;
+	}
+}

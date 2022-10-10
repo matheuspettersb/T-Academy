@@ -1,0 +1,40 @@
+package Ex02;
+
+import javax.swing.JOptionPane;
+
+public class Aluno {
+	/*
+	 default:	não especificado, quase um public mas só a glr do mesmo pacote pode ver - coisa do java, outras linguagens podem n ter
+	 public: 	farofa
+	 private:	guia anonima 
+ 	 protected: mãe e filhos - herança, mesmo que em outro pacote
+	*/
+	
+	private String nome;
+	private double nota1, nota2;
+	
+	private void obterDados() {
+		nome = JOptionPane.showInputDialog("Informe o nome:");
+		nota1 = Double.parseDouble(JOptionPane.showInputDialog("Informe a nota 1:"));
+		nota2 = Double.parseDouble(JOptionPane.showInputDialog("Informe a nota 2:"));
+	}
+	
+	private double media() {
+		return (nota1+nota2)/2;
+	}
+	
+	private String situacao(double media) {
+		//usando ternario
+		return media >= 7 ? "aprovado(a)" : "reprovado(a)";
+		
+		
+		/*if (media<7) {
+			return "Reprovado(a)";
+		} else {
+			return "Aprovado(a)";
+		*/
+	}
+	
+	
+	
+}

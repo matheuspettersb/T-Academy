@@ -1,0 +1,11 @@
+package exPOO03;
+
+import java.time.LocalDate;
+
+public class Calendario {
+	private LocalDate dataInformada;
+	
+	public int dia(LocalDate dia) {
+		return dia;
+	}
+}

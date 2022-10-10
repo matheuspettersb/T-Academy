@@ -1,0 +1,50 @@
+package Avaliacao;
+
+import java.time.LocalDate;
+//Explicação do projeto na classe main
+public class Editora extends Modelo {
+	private String nome;
+	private int anoCriacao;
+	
+	/* O método abaixo faz a validação do ano inserido para registro da editora
+	 * O ano ultilizado como parametro mínimo é o ano de criação da New York World,
+	 * o jornal que publicou The Yellow Kid in McFadden's Flats. 
+	 * O valor máximo para ano é o ano atual.
+	 */
+	public boolean validaAnoEditora(int ano) {
+		if (ano < 1860 || ano > LocalDate.now().getYear()) {
+			return false;
+		}
+		return true;
+	}
+	
+	//método herdado da classe abstrata (Modelo), retorna uma String com todos os dados do objeto
+	public String emTexto() {
+		return "Editora "+this.getNome()+
+				"\nCriada em: "+this.getAnoCriacao();
+	}
+	
+	//método construtor da classe
+	public Editora(String nome, int anoCriacao) {
+		this.setNome(nome);
+		this.setAnoCriacao(anoCriacao);
+	}
+	
+	//métodos get/set dos atributos da classe
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public int getAnoCriacao() {
+		return anoCriacao;
+	}
+
+	public void setAnoCriacao(int anoCriacao) {
+		this.anoCriacao = anoCriacao;
+	}
+
+}

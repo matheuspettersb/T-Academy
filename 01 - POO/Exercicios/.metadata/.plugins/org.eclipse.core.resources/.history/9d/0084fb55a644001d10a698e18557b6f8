@@ -1,0 +1,8 @@
+package exPOO05;
+
+public class Teste {
+	
+	char[] vetor = new char[4];
+	
+
+}

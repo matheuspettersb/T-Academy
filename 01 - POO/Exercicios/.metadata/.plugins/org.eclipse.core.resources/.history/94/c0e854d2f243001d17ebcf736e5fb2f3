@@ -1,0 +1,8 @@
+package exPOO02;
+
+public class Poupanca {
+	private double valorInvestido;
+	private int tempo;
+	private double juros;
+
+}

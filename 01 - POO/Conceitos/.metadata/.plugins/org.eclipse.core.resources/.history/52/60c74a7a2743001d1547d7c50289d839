@@ -1,0 +1,14 @@
+package Ex03;
+
+public class Acao {
+	
+	
+	public Acao() { //construtor vazio
+		System.out.println("Construtor executado");
+	}
+	
+	public Acao(String nome) {
+		System.out.println("Bom dia, "+nome);
+	}
+	
+}

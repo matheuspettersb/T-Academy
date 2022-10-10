@@ -1,0 +1,22 @@
+package Avaliacao;
+
+public class Main {
+	//TODO metodo estatico, validação dos dados, validacao de duplicidade
+	
+	
+	
+	/*	Método principal do projeto, roda o sistema.
+		O projeto simula um sistema de "livraria" ou armazém de histórias em quadrinhos.
+		O sistema conta com 5 classes:
+			- Sistema 	> Classe principal que faz a maioria das operações sobre as classes Comic e Editora.
+			- Comic 	> Classe com as informações dos objetos que serão operados pelo sistema.
+			- Editora 	> Classe com as informações sobre a editora das comics.
+			- Modelo	> Classe com métodos abstratos implementados por Comic e Editora.
+			- Main 		> roda a coisa toda.
+	*/
+	public static void main(String[] args) {
+		Modelo m = new Modelo();
+		m.emTexto();
+	}
+
+}

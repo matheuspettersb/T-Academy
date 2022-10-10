@@ -1,0 +1,11 @@
+package Ex06;
+
+public class Class2 extends Class1 {
+	public int idade;
+	
+	public Class2() {	// precisa puxar o nome pra classe 1 - constructor super();
+		super("Robson");
+		System.out.println("Executando Classe 2");
+	}
+	
+}

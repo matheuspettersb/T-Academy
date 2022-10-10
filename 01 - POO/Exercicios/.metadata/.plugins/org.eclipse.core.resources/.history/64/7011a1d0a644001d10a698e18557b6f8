@@ -1,0 +1,14 @@
+package exPOO05;
+
+public class Teste {
+
+	public static void main(String[] args) {
+		char[] vetor = new char[4];
+		
+		if(vetor[0] == ' ') {
+			System.out.println("Oi");
+		}
+	}
+	
+
+}

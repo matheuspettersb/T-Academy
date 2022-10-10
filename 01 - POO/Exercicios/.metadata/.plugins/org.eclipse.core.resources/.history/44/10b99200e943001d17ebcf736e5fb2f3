@@ -1,0 +1,57 @@
+package exPOO;
+
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
+public class SistemaContatos extends SistemaContatoAbstrato {
+
+	private ArrayList<Contato> listaContatos = new ArrayList<>();
+
+	@Override
+	public void cadastrar(String nome, String email, long telefone) {
+		Contato c = new Contato(nome, email, telefone);
+		listaContatos.add(c);
+	}
+
+	@Override
+	public void listar() {
+		String msg = 	"----- LISTA DE CONTATOS -----\n"+
+						"-----------------------------\n";
+		for (Contato c : listaContatos) {
+			msg += 	"Nome: " + c.getNome() + 
+					"\nE-mail: " + c.getEmail() + 
+					"\nTelefone: " + c.getTelefone() +
+					"\n-----------------------------\n";
+		}
+		JOptionPane.showMessageDialog(null, msg);
+	}
+
+	@Override
+	public void pesquisar(String nome) {
+		String msg = null;
+		for (Contato c : listaContatos) {
+			if (c.getNome().equals(nome)) {
+			msg += 	"-----------------------------\n"+
+					"Nome: " + c.getNome() + 
+					"\nE-mail: " + c.getEmail() + 
+					"\nTelefone: " + c.getTelefone() +
+					"\n-----------------------------\n";
+			}
+		}
+		if (msg==null)
+			JOptionPane.showMessageDialog(null, "Contato inexistente");
+		else
+		JOptionPane.showMessageDialog(null, msg);
+	}
+
+	@Override
+	public void alterar() {
+
+	}
+
+	@Override
+	public void remover() {
+
+	}
+
+}

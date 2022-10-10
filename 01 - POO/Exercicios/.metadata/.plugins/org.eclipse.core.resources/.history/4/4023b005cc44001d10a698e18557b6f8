@@ -1,0 +1,77 @@
+package Avaliacao;
+
+public class Comic extends Modelo{
+	private Editora editora;
+	private int anoPublicacao;
+	private String nome;
+	private String criador;
+	private String ilustrador;
+
+	@Override
+	public Comic cadastrar() {
+		return null;
+	}
+	
+	@Override
+	public String emTexto() {
+		return "Comic - \""+this.getNome()+"\""+
+				"\nAutor: "+this.getCriador()+
+				"\nIlustrado por: "+this.getIlustrador()+
+				"\nEditora: "+this.getEditora()+
+				"\nAno de publicação: "+this.getAnoPublicacao();
+	}
+
+	
+	
+	
+	
+	
+	public Comic(Editora editora, int anoPublicacao, String nome, String criador, String ilustrador) {
+		this.editora = editora;
+		this.anoPublicacao = anoPublicacao;
+		this.nome = nome;
+		this.criador = criador;
+		this.ilustrador = ilustrador;
+	}
+
+	public Editora getEditora() {
+		return editora;
+	}
+
+	public void setEditora(Editora editora) {
+		this.editora = editora;
+	}
+
+	public int getAnoPublicacao() {
+		return anoPublicacao;
+	}
+
+	public void setAnoPublicacao(int anoPublicacao) {
+		this.anoPublicacao = anoPublicacao;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getCriador() {
+		return criador;
+	}
+
+	public void setCriador(String criador) {
+		this.criador = criador;
+	}
+
+	public String getIlustrador() {
+		return ilustrador;
+	}
+
+	public void setIlustrador(String ilustrador) {
+		this.ilustrador = ilustrador;
+	}
+	
+}

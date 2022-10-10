@@ -1,0 +1,6 @@
+package Avaliacao;
+
+public class Marca extends Modelo {
+	private String nome;
+	
+}

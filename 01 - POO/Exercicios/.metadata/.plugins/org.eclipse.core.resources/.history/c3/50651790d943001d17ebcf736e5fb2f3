@@ -1,0 +1,30 @@
+package exLocalDateTime;
+
+import java.time.LocalDateTime;
+
+import javax.swing.JOptionPane;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		exercicio01();
+		//exercicio02();
+	}
+	
+	public static void exercicio01() {
+		LocalDateTime hoje = LocalDateTime.now();
+		int dia = hoje.getDayOfMonth();
+		int mes = hoje.getMonthValue();
+		int ano = hoje.getYear();
+		int hora = hoje.getHour();
+		int minutos = hoje.getMinute();
+		int segundos = hoje.getSecond();
+		
+		JOptionPane.showMessageDialog(null, dia+"/"+mes+"/"+ano+" - "+hora+":"+minutos+
+											"\nHora: "+hora+" horas, "+minutos+" minutos e "+segundos+" segundos");
+	}
+	
+	public static void exercicio02() {
+		JOptionPane.showInputDialog("Insira o nome do produto");
+	}
+}

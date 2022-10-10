@@ -1,0 +1,19 @@
+package ex09;
+
+public class Test implements CalculadoraBasica, CalculadoraAvancada{
+
+	@Override
+	public int somar(int n1, int n2) {
+		
+		return 0;
+	}
+
+	@Override
+	public int subtrair(int n1, int n2) {
+		
+		return 0;
+	}
+	
+	
+	
+}

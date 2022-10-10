@@ -1,0 +1,15 @@
+package exPOO02;
+
+import javax.swing.JOptionPane;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		double v  = Double.parseDouble(JOptionPane.showInputDialog(null, "Informe o valor do investimento"));
+		int t = Integer.parseInt(JOptionPane.showInputDialog(null, "Informe o tempo do investimento (em meses)"));
+		double j  = Double.parseDouble(JOptionPane.showInputDialog(null, "Informe o valor do juros"));
+		Poupanca p = new Poupanca(v,t,j);
+		JOptionPane.showMessageDialog(null, p.getDadosPoupanca());
+	}
+	
+}

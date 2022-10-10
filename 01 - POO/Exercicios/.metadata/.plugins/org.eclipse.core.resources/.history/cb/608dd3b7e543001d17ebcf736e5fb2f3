@@ -1,0 +1,32 @@
+package exPOO;
+
+import java.util.ArrayList;
+
+public class Contato extends ContatoAbstrato{
+
+	@Override
+	public void cadastrar(String nome, String email, long telefone) {
+		
+	}
+
+	@Override
+	public void listar(ArrayList contatos) {
+		
+	}
+
+	@Override
+	public void pesquisar(String nome) {
+		
+	}
+
+	@Override
+	public void alterar() {
+		
+	}
+
+	@Override
+	public void remover() {
+		
+	}
+
+}

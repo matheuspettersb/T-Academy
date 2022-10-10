@@ -1,0 +1,10 @@
+package Avaliacao;
+
+public abstract class Modelo {
+	
+	public abstract Object cadastrar();
+	public abstract Object selecionar();
+	public abstract Object alterar();
+	public abstract Object remover();
+	
+}

@@ -1,0 +1,8 @@
+package Avaliacao;
+
+public abstract class Modelo {
+	//métodos abstratos que serão implementados nas classes que extendem Modelo (Comic e Editora)
+	public abstract Object cadastrar();
+	public abstract String emTexto();
+	
+}

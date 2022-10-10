@@ -1,0 +1,22 @@
+package exPOO04;
+
+public class Formatador {
+	private String termo;
+	
+	public String formatar() {
+		
+	}
+
+	
+	
+	
+	
+	public String getTermo() {
+		return termo;
+	}
+	public void setTermo(String termo) {
+		this.termo = termo;
+	}
+	
+	
+}

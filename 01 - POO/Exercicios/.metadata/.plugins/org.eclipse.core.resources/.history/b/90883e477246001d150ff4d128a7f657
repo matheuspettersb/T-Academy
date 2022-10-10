@@ -1,0 +1,47 @@
+package exPOO09;
+
+import java.util.Random;
+
+import javax.swing.JOptionPane;
+
+public class Velha {
+	public int turno = 1;
+	public String[][] velha = {	{"  ", "  ", "  "},
+								{"  ", "  ", "  "},
+								{"  ", "  ", "  "}};
+	
+	
+	
+	
+	
+	
+	public void jogadaIA() {
+		Random r = new Random();
+		int i = r.nextInt(3);
+		int j = r.nextInt(3);
+		while (!velha[i][j].equals("  ")) {
+			i = r.nextInt(3);
+			j = r.nextInt(3);
+		}
+		String str = ""+(i)+(j);
+		marcaPonto(str);
+	}
+	
+	
+	public void marcaPonto(String posicao) {
+		int i = Integer.parseInt(String.valueOf(posicao.charAt(0)));
+		int j = Integer.parseInt(String.valueOf(posicao.charAt(1)));
+		if (velha[i][j].equals("  ")) {
+			if (turno%2==1) {
+				velha[i][j] = "X";
+				turno++;
+			} else {
+				velha[i][j] = "O";
+				turno++;
+			}
+		} else {
+			JOptionPane.showMessageDialog(null, "Posicao Inválida");
+		}
+	}
+
+}

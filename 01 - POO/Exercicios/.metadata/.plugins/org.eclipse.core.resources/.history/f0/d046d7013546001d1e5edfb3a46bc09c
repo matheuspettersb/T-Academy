@@ -1,0 +1,13 @@
+package exPOO07;
+
+import javax.swing.JOptionPane;
+
+public class Main {
+
+	public static void main(String[] args) {
+		String s = JOptionPane.showInputDialog(null, "Batalha naval\n\n"+mostraMar()+"\n\n+Informe a casa que você quer tentar (linha/coluna");
+		
+		
+	}
+	
+}

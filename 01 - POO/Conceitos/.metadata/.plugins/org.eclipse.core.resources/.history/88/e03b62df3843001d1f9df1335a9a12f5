@@ -1,0 +1,10 @@
+package Ex06;
+
+public class Class1 {
+	public String nome;
+	
+	public Class1(String nome) {
+		System.out.println("Executando Classe 1 - "+nome);
+	}
+	
+}

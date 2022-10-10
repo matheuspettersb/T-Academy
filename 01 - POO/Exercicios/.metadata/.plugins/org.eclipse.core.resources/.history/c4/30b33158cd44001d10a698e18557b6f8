@@ -1,0 +1,8 @@
+package Avaliacao;
+
+public abstract class Modelo {
+	
+	public abstract Object cadastrar();
+	public abstract String emTexto();
+	
+}

@@ -1,0 +1,10 @@
+package Ex03;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		Acao a = new Acao();
+		Acao b = new Acao("marilene");
+		Acao c = new Acao("kung fu panda", 67);
+	}
+}

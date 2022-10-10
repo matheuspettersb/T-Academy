@@ -1,0 +1,36 @@
+package exPOO07;
+
+import javax.swing.JOptionPane;
+
+public class Main {
+
+	public static void main(String[] args) {
+//		BatalhaNaval bn = new BatalhaNaval();
+//
+//		do {
+//			try {
+//				int posicao = Integer.parseInt(JOptionPane.showInputDialog(null, "Batalha naval\n\n" + bn.mostraMar()
+//						+ "\n\nInforme a casa que você quer tentar (linha e coluna)"));
+//				if (posicao < 00 || posicao > 99) {
+//					JOptionPane.showMessageDialog(null, "Você deve informar um número de 2 digitos entre 00 e 99");
+//				}
+//			} catch (NumberFormatException e) {
+//				JOptionPane.showMessageDialog(null, "Você deve informar um número de 2 digitos entre 00 e 99");
+//			}
+//			bn.executa();
+//		} while (bn.acertou != true && bn.erros < 3);
+//		if (bn.erros==3) {
+//			JOptionPane.showMessageDialog(null, bn.mostraMar()+"\n\nVocê acertou as 3 bombas.\n Melhore");
+//		}
+//		if (bn.acertou==true) {
+//			JOptionPane.showMessageDialog(null, "Você encontrou o barco, parabéns.\n\n"+bn.mostraMar());
+//
+//		}
+		int k=00;
+		int j = 0;
+		if (k==j) {
+			System.out.println("al");
+		}
+	}
+
+}

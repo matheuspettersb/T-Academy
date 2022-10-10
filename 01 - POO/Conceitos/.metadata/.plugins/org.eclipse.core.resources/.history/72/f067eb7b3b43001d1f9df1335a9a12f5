@@ -1,0 +1,16 @@
+package ex08;
+
+public class Produto extends Padrao {
+
+	public boolean cadastro() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public Object selecao() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+
+}

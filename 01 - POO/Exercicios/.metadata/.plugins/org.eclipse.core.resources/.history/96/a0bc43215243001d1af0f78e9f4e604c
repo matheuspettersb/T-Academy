@@ -1,0 +1,45 @@
+package exMath;
+
+public class Calculadora {
+	
+	public double soma(double n, double n2) {
+		return (n+n2);
+	}
+	
+	public double subtracao(double n, double n2) {
+		return (n-n2);
+	}
+	
+	public double multiplicacao(double n, double n2) {
+		return (n*n2);
+	}
+	
+	public double divisao(double n, double n2) {
+		return (n/n2);
+	}
+	
+	public double sen(double ang) {
+		return Math.sin(ang);
+	}
+	
+	public double cos(double ang) {
+		return Math.cos(ang);
+	}
+	
+	public double tg(double ang) {
+		return Math.tan(ang);
+	}
+	
+	public double log(double ang) {
+		return Math.log(ang);
+	}
+	
+	public double raizQuad(double n) {
+		return Math.sqrt(n);
+	}
+	
+	public double raizCub(double n) {
+		return Math.cbrt(n);
+	}
+	
+}

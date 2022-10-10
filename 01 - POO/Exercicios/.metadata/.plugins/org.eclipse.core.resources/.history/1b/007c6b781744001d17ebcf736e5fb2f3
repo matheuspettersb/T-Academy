@@ -1,0 +1,109 @@
+package exPOO03;
+
+public class Calendario {
+	private int dia;
+	private int mes;
+	private int ano;
+	
+	private int[] diasMeses = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+	private int[] dias;
+
+	public Calendario(String data) {
+		String[] separacao = data.split("/");
+		setDia(Integer.parseInt(separacao[0]));
+		setMes(Integer.parseInt(separacao[1]));
+		setAno(Integer.parseInt(separacao[2]));
+		
+		System.out.println("data inserida: d"+dia+" m"+mes+" a"+ano);
+	}
+
+	public String diaAnterior(int dia, int mes,int ano) {
+		if (!validaDataFull(dia,mes,ano))
+			return "data inválida";
+		else
+		return "data: d"+dia+" m"+this.getMes()+" a"+this.getAno();
+	}
+	
+	public int ajustaDia() {
+		if (this.getMes() == 1||this.getMes()== 2||this.getMes()==4||this.getMes()== 6||this.getMes() == 8 || this.getMes() == 9 || this.getMes() == 11) {
+			setDia(31);
+			ajustaMes(this.getMes());
+		} else if (this.getMes() == 5||this.getMes()== 7||this.getMes()==10||this.getMes()== 12) {
+			setDia(30);
+			ajustaMes(this.getMes());
+		} else if (this.getMes() == 3) {
+			if (isBissexto(this.getAno())) {
+				setDia(29);
+				ajustaMes(this.getMes());
+			} else {
+				setDia(28);
+				ajustaMes(this.getMes());
+			}
+		}
+		return this.getDia();
+	}
+	
+	public int ajustaMes(int mes) {
+		if (mes==1) {
+			setMes(12);
+			ajustaAno(this.getAno());
+		}
+		else {
+			setMes(mes-1);
+		}
+		return this.getMes();
+	}
+	
+	public int ajustaAno(int ano) {
+		if (ano<1900 || ano>2100)
+			return -1;
+		this.setAno(ano-1);
+		return this.getAno();
+	}
+	
+	public boolean isBissexto(int ano) {
+		if (ano%4!=0) {
+			return false;
+		}
+		return true;
+	}
+	
+	public boolean validaDataFull(int dia, int mes, int ano) {
+		if (dia == -1)
+			return false;
+		else if (mes == -1)
+			return false;
+		else if (ano == -1)
+			return false;
+		return true;
+	}
+
+	
+	
+	//get/set
+	public int getDia() {
+		return dia;
+	}
+
+	public void setDia(int dia) {
+		this.dia = dia;
+	}
+
+	public int getMes() {
+		return mes;
+	}
+
+	public void setMes(int mes) {
+		this.mes = mes;
+	}
+
+	public int getAno() {
+		return ano;
+	}
+
+	public void setAno(int ano) {
+		this.ano = ano;
+	}
+	
+	
+}

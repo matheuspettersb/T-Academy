@@ -1,0 +1,56 @@
+package exPOO;
+
+import javax.swing.JOptionPane;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		String escolha;
+
+		do {
+			String menu = JOptionPane.showInputDialog(	"Bem vindo(a). Informe a operação que gostaria de realizar"+
+														"1. Cadastrar um novo contato"+
+														"2. Listar os contatos"+
+														"3. Pesquisar um contato"+
+														"4. Alterar um contato"+
+														"5. Remover um contato");
+			escolha = menu;
+
+			switch (escolha) {
+			case "1":
+				n1 = Integer.parseInt(JOptionPane.showInputDialog("Manda o primeiro numero ai pae"));
+				n2 = Integer.parseInt(JOptionPane.showInputDialog("Agora o segundo chef"));
+				JOptionPane.showMessageDialog(null, "Resultado: " + c.soma(n1, n2));
+				break;
+
+			case "2":
+				n1 = Integer.parseInt(JOptionPane.showInputDialog("Manda o primeiro numero ai pae"));
+				n2 = Integer.parseInt(JOptionPane.showInputDialog("Agora o segundo chef"));
+				JOptionPane.showMessageDialog(null, "Resultado: " + c.subtracao(n1, n2));
+				break;
+
+			case "3":
+				n1 = Integer.parseInt(JOptionPane.showInputDialog("Manda o primeiro numero ai pae"));
+				n2 = Integer.parseInt(JOptionPane.showInputDialog("Agora o segundo chef"));
+				JOptionPane.showMessageDialog(null, "Resultado: " + c.multiplicacao(n1, n2));
+				break;
+
+			case "4":
+				n1 = Integer.parseInt(JOptionPane.showInputDialog("Manda o primeiro numero ai pae"));
+				n2 = Integer.parseInt(JOptionPane.showInputDialog("Agora o segundo chef"));
+				JOptionPane.showMessageDialog(null, "Resultado: " + c.divisao(n1, n2));
+				break;
+
+			case "5":
+				n1 = Integer.parseInt(JOptionPane.showInputDialog("Manda o ângulo do seno ai meu peixe (em rad)"));
+				JOptionPane.showMessageDialog(null, "Resultado: " + c.sen(n1));
+				break;
+				
+			default:
+				JOptionPane.showMessageDialog(null, "Operação não reconhecida");
+			}
+		}while(escolha!=413);
+		
+	}
+	
+}

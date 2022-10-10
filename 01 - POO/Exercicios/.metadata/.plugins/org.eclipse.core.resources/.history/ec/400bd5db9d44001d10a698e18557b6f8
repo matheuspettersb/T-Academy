@@ -1,0 +1,74 @@
+package exPOO04;
+
+public class Formatador {
+	private String termo;
+	//vetor = termo.toCharArray();
+	
+	public String verificar() {
+		
+	}
+	
+	
+	
+	public int qntVogais() {
+		int qnt = 0;
+		char[] vetor = termo.toCharArray();
+		for (int i=0; i<vetor.length; i++) {
+			if (Character.isLetter(vetor[i])) {
+				qnt++;
+			}
+		}
+		return qnt;
+	}
+	
+	public int qntConsoantes() {
+		int qnt = 0;
+		char[] vetor = termo.toCharArray();
+		for (int i=0; i<vetor.length; i++) {
+			if (Character.isLetter(vetor[i])) {
+				qnt++;
+			}
+		}
+		return qnt;
+	}
+	
+	public int qntNumeros() {
+		int qnt = 0;
+		char[] vetor = termo.toCharArray();
+		for (int i=0; i<vetor.length; i++) {
+			if (Character.isLetter(vetor[i])) {
+				qnt++;
+			}
+		}
+		return qnt;
+	}
+	
+	public int qntEspacos() {
+		int qnt = 0;
+		char[] vetor = termo.toCharArray();
+		for (int i=0; i<vetor.length; i++) {
+			if (vetor[i] == " ") {
+				qnt++;
+			}
+		}
+		return qnt;
+	}
+	
+	public int qnt() {
+		int qnt;
+		return 0;
+	}
+	
+	public Formatador(String termo) {
+		this.setTermo(termo);
+	}
+	
+	public String getTermo() {
+		return termo;
+	}
+	public void setTermo(String termo) {
+		this.termo = termo;
+	}
+	
+	
+}

@@ -1,0 +1,18 @@
+package Ex01;
+
+import javax.swing.JOptionPane;
+
+public class Pessoa {
+	String nome;
+	int idade;
+	double altura;
+	
+	public void descrever() {
+		nome = JOptionPane.showInputDialog("Informe seu nome:");
+		idade = Integer.parseInt(JOptionPane.showInputDialog("Informe sua idade:"));
+		altura = Double.parseDouble(JOptionPane.showInputDialog("Informe sua altura (m):"));
+	}
+	
+	
+
+}

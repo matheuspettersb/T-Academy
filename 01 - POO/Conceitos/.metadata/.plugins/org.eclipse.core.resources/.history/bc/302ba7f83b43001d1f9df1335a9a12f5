@@ -1,0 +1,15 @@
+package ex08;
+
+public class Produto extends Padrao {
+
+	public boolean cadastrar() {
+		
+		return false;
+	}
+
+	public void selecionar() {
+	
+	}
+	
+
+}

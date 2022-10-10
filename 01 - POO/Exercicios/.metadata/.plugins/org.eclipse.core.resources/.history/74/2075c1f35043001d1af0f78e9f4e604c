@@ -1,0 +1,97 @@
+package exMath;
+
+import javax.swing.JOptionPane;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		Calculadora c = new Calculadora();
+		int n1=0;
+		int n2=0;
+		String menu = JOptionPane.showInputDialog(	"Fala meu parcero. O que vamos calcular hoje?"+
+														"\n1. SOMA"+
+														"\n2. SUBTRAÇÃO"+
+														"\n3. MULTIPLICAÇÃO"+
+														"\n4. DIVISÃO"+
+														"\n5. SENO"+
+														"\n6. COSSENO"+
+														"\n7. TANGENTE"+
+														"\n8. RAIZ QUADRADA"+
+														"\n9. RAIZ CÚBICA"+
+														"\n413. SAIR");
+		String escolha;
+		
+		do {
+			escolha = menu;
+			switch(escolha) {
+			case "menu":
+				escolha = menu;
+			case "1":
+				n1 = Integer.parseInt(JOptionPane.showInputDialog("Manda o primeiro numero ai pae"));
+				n2 = Integer.parseInt(JOptionPane.showInputDialog("Agora o segundo chef"));
+				JOptionPane.showMessageDialog(null, "Resultado: "+c.soma(n1, n2));
+				escolha = menu;
+				break;
+				
+			case "2":
+				n1 = Integer.parseInt(JOptionPane.showInputDialog("Manda o primeiro numero ai pae"));
+				n2 = Integer.parseInt(JOptionPane.showInputDialog("Agora o segundo chef"));
+				JOptionPane.showMessageDialog(null, "Resultado: "+c.subtracao(n1, n2));
+				//escolha = menu;
+				break;
+				
+			case "3":
+				n1 = Integer.parseInt(JOptionPane.showInputDialog("Manda o primeiro numero ai pae"));
+				n2 = Integer.parseInt(JOptionPane.showInputDialog("Agora o segundo chef"));
+				JOptionPane.showMessageDialog(null, "Resultado: "+c.multiplicacao(n1, n2));
+				escolha = menu;
+				break;
+				
+			case "4":
+				n1 = Integer.parseInt(JOptionPane.showInputDialog("Manda o primeiro numero ai pae"));
+				n2 = Integer.parseInt(JOptionPane.showInputDialog("Agora o segundo chef"));
+				JOptionPane.showMessageDialog(null, "Resultado: "+c.divisao(n1, n2));
+				escolha = menu;
+				break;
+				
+			case "5":
+				n1 = Integer.parseInt(JOptionPane.showInputDialog("Manda o ângulo do seno ai meu peixe"));
+				JOptionPane.showMessageDialog(null, "Resultado: "+c.sen(n1));
+				escolha = menu;
+				break;
+				
+			case "6":
+				n1 = Integer.parseInt(JOptionPane.showInputDialog("Manda o ângulo do seno ai meu peixe"));
+				JOptionPane.showMessageDialog(null, "Resultado: "+c.cos(n1));
+				escolha = menu;
+				break;
+				
+			case "7":
+				n1 = Integer.parseInt(JOptionPane.showInputDialog("Manda o ângulo do seno ai meu peixe"));
+				JOptionPane.showMessageDialog(null, "Resultado: "+c.tg(n1));
+				escolha = menu;
+				break;
+				
+			case "8":
+				n1 = Integer.parseInt(JOptionPane.showInputDialog("Manda o ângulo do seno ai meu peixe"));
+				JOptionPane.showMessageDialog(null, "Resultado: "+c.raizQuad(n1));
+				escolha = menu;
+				break;
+				
+			case "9":
+				n1 = Integer.parseInt(JOptionPane.showInputDialog("Manda o ângulo do seno ai meu peixe"));
+				JOptionPane.showMessageDialog(null, "Resultado: "+c.raizCub(n1));
+				escolha = menu;
+				break;
+			
+			case "413":
+				JOptionPane.showMessageDialog(null, "Jogamo pae. Até mais");
+				break;
+				
+			default:
+				JOptionPane.showMessageDialog(null, "Irmão, lê oqq é pra informar.");
+				escolha = menu;
+			}
+		}while(!escolha.equals("413"));
+	}
+}

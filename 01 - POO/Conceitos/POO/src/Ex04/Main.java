@@ -1,0 +1,13 @@
+package Ex04;
+
+public class Main {
+	
+	@SuppressWarnings("unused")
+	public static void main(String[] args) {
+		Calculos.soma(6,27);
+		
+		for(int i=0; i<6; i++) {
+			Calculos c = new Calculos();
+		}
+	}
+}

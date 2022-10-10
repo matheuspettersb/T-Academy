@@ -1,0 +1,16 @@
+package Avaliacao;
+
+public abstract class Modelo {
+	// Explicação do projeto na classe main
+	//métodos abstratos que serão implementados nas classes que extendem Modelo (Comic e Editora)
+	public abstract Object cadastrar();
+	public abstract String emTexto();
+	
+	public static boolean validaNome(String nome) {
+		if (nome.isEmpty()||nome.isBlank()) {
+			return true;
+		}
+		return false;
+	}
+	
+}

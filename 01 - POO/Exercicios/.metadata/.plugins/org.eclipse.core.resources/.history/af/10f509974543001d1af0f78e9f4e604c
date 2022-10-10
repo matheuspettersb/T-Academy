@@ -1,0 +1,22 @@
+package exString;
+
+import javax.swing.JOptionPane;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		String frase = JOptionPane.showInputDialog("Informe uma frase ou palavra: ");
+		String letra;
+//		char[] vetorChar = new char[frase.length()];
+		
+		for (int i=0; i<frase.length();i++) {
+			letra = String.valueOf(frase.charAt(i));
+			if (i%2 == 0) {
+				System.out.println(letra.toUpperCase());
+			} else {
+				System.out.println(letra.toLowerCase());
+			}
+		}
+	}
+
+}

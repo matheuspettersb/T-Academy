@@ -1,0 +1,12 @@
+package Ex02;
+
+public class Aluno {
+	/*
+	 default:	não especificado, quase um public mas só a glr do mesmo pacote pode ver - coisa do java, outras linguagens podem n ter
+	 public: 	farofa
+	 private:	guia anonima 
+ 	 protected: mãe e filhos - herança
+	*/
+	
+	
+}

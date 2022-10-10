@@ -1,0 +1,58 @@
+package exLocalDateTime;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+
+public class Main {
+
+	public static void main(String[] args) {
+		//exercicio01();
+		exercicio02();
+	}
+
+	public static void exercicio01() {
+		LocalDateTime hoje = LocalDateTime.now();
+		int dia = hoje.getDayOfMonth();
+		int mes = hoje.getMonthValue();
+		int ano = hoje.getYear();
+		int hora = hoje.getHour();
+		int minutos = hoje.getMinute();
+		int segundos = hoje.getSecond();
+		String[] meses = { "janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro",
+				"outubro", "novembro", "dezembro" };
+
+		JOptionPane.showMessageDialog(null,
+				dia + "/" + mes + "/" + ano + " - " + hora + ":" + minutos + "\n Dia " + dia + " de " + meses[(mes - 1)]
+						+ " de " + ano + " - " + hora + " horas, " + minutos + " minutos e " + segundos + " segundos");
+	}
+
+	public static void exercicio02() {
+		ArrayList<Produto> armazemProdutos = new ArrayList<>();
+		int opcao;
+		do {opcao = JOptionPane.showConfirmDialog(null, "Deseja registrar um novo produto?");
+		
+		if (opcao==0) {		//yes = 0; no = 1; cancel = 2
+			String nome = JOptionPane.showInputDialog(null, "informe o nome do produto:");
+			double valor = Double.parseDouble(JOptionPane.showInputDialog(null, "informe o valor do produto:"));
+			int quant = Integer.parseInt(JOptionPane.showInputDialog(null, "informe a quantidade em estoque:"));
+			
+			Produto p = new Produto(nome, valor, quant);
+			armazemProdutos.add(p);
+		} else	if (opcao==1) {
+				opcao = JOptionPane.showConfirmDialog(null, "Deseja listar os produtos cadastrados?");
+				if (opcao==0) {
+					String msg = 	"----- LISTA DE PRODUTOS -----\n"+
+									"-----------------------------\n";
+					for (Produto p : armazemProdutos) {
+						msg += 	"Nome: "+p.getNome()+
+								"\nValor: "+p.getValor()+
+								"\nQuantidade em estoque: "+p.getQtdEsqtoque()+
+								"\nCadastrado em: "+p.getDataHoraCadastroFormatado();
+					}
+					JOptionPane.showMessageDialog(null, msg);
+				} 
+			}
+		}while(opcao!=2);
+}}

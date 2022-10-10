@@ -1,0 +1,35 @@
+package Avaliacao;
+
+import javax.swing.JOptionPane;
+
+public class Main {
+	/*	Método principal do projeto, roda o sistema.
+		O projeto simula um sistema de "livraria" ou armazém de histórias em quadrinhos.
+		O sistema conta com 5 classes:
+			- Sistema 	> Classe principal que faz a maioria das operações sobre as classes Comic e Editora.
+			- Comic 	> Classe com as informações dos objetos que serão operados pelo sistema.
+			- Editora 	> Classe com as informações sobre a editora das comics.
+			- Modelo	> Classe com métodos abstratos implementados por Comic e Editora.
+			- Main 		> roda a coisa toda.
+	*/
+	public static void main(String[] args) {
+		Sistema s;
+		String escolha;
+
+		do {
+			String menu = JOptionPane
+					.showInputDialog("Olá, bem vindo ao sistema de registro de Comics." + "\n1. SOMA" + "\n2. SUBTRAÇÃO"
+							+ "\n3. MULTIPLICAÇÃO" + "\n4. DIVISÃO" + "\n5. SENO" + "\n6. COSSENO" + "\n7. TANGENTE"
+							+ "\n8. RAIZ QUADRADA" + "\n9. RAIZ CÚBICA" + "\n10. LOGARITIMO" + "\n\n413. SAIR");
+			escolha = menu;
+
+			switch (escolha) {
+			case "1":
+				n1 = Integer.parseInt(JOptionPane.showInputDialog("Manda o primeiro numero ai pae"));
+				n2 = Integer.parseInt(JOptionPane.showInputDialog("Agora o segundo chef"));
+				JOptionPane.showMessageDialog(null, "Resultado: " + c.soma(n1, n2));
+				break;
+
+	}
+
+}

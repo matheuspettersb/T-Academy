@@ -1,0 +1,6 @@
+package ex07;
+
+public class Text {
+	private String word = "proway";
+
+}

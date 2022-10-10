@@ -1,0 +1,10 @@
+package exPOO;
+
+public abstract class SistemaContatoAbstrato {
+	
+	public abstract void cadastrar(String nome, String email, String telefone);
+	public abstract void listar();
+	public abstract void pesquisar(String nome);
+	public abstract void alterar();
+	public abstract void remover();
+}

@@ -1,0 +1,10 @@
+package exPOO05;
+
+public class Teste {
+
+	public static void main(String[] args) {
+		char[] vetor = new char[4];
+	}
+	
+
+}

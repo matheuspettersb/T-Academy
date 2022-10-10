@@ -1,0 +1,10 @@
+package Avaliacao;
+
+public interface SistemaComics {
+	
+	public void cadastrarComic();
+	public void listarComic();
+	public void alterarComic();
+	public void removerComic();
+
+}

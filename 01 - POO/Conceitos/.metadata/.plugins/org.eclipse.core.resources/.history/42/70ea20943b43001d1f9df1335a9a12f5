@@ -1,0 +1,9 @@
+package ex08;
+
+public abstract class Padrao {
+	
+	public abstract boolean cadastrar();
+	public abstract void selecionar();
+	public void naoAbstrato();
+	
+}

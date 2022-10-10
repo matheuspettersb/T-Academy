@@ -1,0 +1,37 @@
+package Avaliacao;
+
+//Explicação do projeto na classe main
+public class Editora {
+	private String nome;
+	private int anoCriacao;
+
+	// método herdado da classe abstrata (Modelo), retorna uma String com todos os
+	// dados do objeto
+	public String emTexto() {
+		return "Editora " + this.getNome() + "\nCriada em: " + this.getAnoCriacao()+"\n";
+	}
+
+	// método construtor da classe
+	public Editora(String nome, int anoCriacao) {
+		this.setNome(nome);
+		this.setAnoCriacao(anoCriacao);
+	}
+
+	// métodos get/set dos atributos da classe
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public int getAnoCriacao() {
+		return anoCriacao;
+	}
+
+	public void setAnoCriacao(int anoCriacao) {
+		this.anoCriacao = anoCriacao;
+	}
+
+}

@@ -1,0 +1,74 @@
+package exPOO07;
+
+import java.util.Random;
+
+public class BatalhaNaval {
+	public int erros = 0;
+	public boolean acertou = false;
+	public String barco;
+	public String bomba1;
+	public String bomba2;
+	public String bomba3;
+	static char mar[][] = new char[][] { 
+			{ '~', '~', '~', '~', '~', '~', '~', '~', '~', '~' },
+			{ '~', '~', '~', '~', '~', '~', '~', '~', '~', '~' },
+			{ '~', '~', '~', '~', '~', '~', '~', '~', '~', '~' },
+			{ '~', '~', '~', '~', '~', '~', '~', '~', '~', '~' }, 
+			{ '~', '~', '~', '~', '~', '~', '~', '~', '~', '~' },
+			{ '~', '~', '~', '~', '~', '~', '~', '~', '~', '~' }, 
+			{ '~', '~', '~', '~', '~', '~', '~', '~', '~', '~' },
+			{ '~', '~', '~', '~', '~', '~', '~', '~', '~', '~' }, 
+			{ '~', '~', '~', '~', '~', '~', '~', '~', '~', '~' },
+			{ '~', '~', '~', '~', '~', '~', '~', '~', '~', '~' } };
+
+	public void executa(String chute) {
+		
+	}
+	
+	public String mostraMar() {
+		String str = "  0 1 2 3 4 5 6 7 8 9\n";
+		for (int i = 0; i < 10; i++) {
+			str += i + " ";
+			for (int j = 0; j < 10; j++) {
+				str += mar[i][j]+" ";
+			}
+			str += "\n";
+		}
+		return str;
+	}
+	
+	public void sorteiaPosicoes() {
+		Random r = new Random();
+		int i = r.nextInt(10);
+		int j = r.nextInt(10);
+		String posicoes = ""+(i)+(j);
+		System.out.println("pos ba "+posicoes);
+		this.barco = posicoes;
+		i = r.nextInt();
+		j = r.nextInt();
+		String b1 = ""+(i)+(j);
+		String b2 = ""+
+
+		}
+	
+	public String sorteiaBomba() {
+		Random r = new Random();
+		int i = r.nextInt(10);
+		int j = r.nextInt(10);
+		return ""+(i)+(j);
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

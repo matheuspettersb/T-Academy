@@ -1,0 +1,9 @@
+package exPOO05;
+
+public class Forca {
+	private static String[] palavras = 
+			{"Amogus", "Danone", "Sozinho", "Memoria", "Ascender", "Torre", "As", "Selado", "Cavalo", "Valquiria",
+			"Deus", "Cinema", "Piada", "Rainha", "Orgulho", "Duvida", "Chimpanze"}
+	}
+
+}

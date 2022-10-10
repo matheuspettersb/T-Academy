@@ -1,0 +1,9 @@
+package Ex03;
+
+public class Acao {
+	
+	
+	public Acao() {
+		System.out.println("Contrutor executado");
+	}
+}

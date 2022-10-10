@@ -1,0 +1,14 @@
+package Ex01;
+
+import java.util.ArrayList;
+
+public class Main {
+
+	public static void main(String[] args) {
+		ArrayList<Pessoa> listaPessoas = new ArrayList<>();
+		
+		Pessoa p = new Pessoa();
+		p.obterDados();
+		p.retornarDados();
+	}
+}

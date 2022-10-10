@@ -1,0 +1,20 @@
+package exLocalDateTime;
+
+import java.time.LocalDateTime;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		exercicio01();
+		//exercicio02();
+	}
+	
+	public static void exercicio01() {
+		LocalDateTime hoje = LocalDateTime.now();
+		
+	}
+	
+	public static void exercicio02() {
+		
+	}
+}

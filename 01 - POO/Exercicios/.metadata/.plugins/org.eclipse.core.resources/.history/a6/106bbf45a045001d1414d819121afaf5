@@ -1,0 +1,20 @@
+package exPOO05;
+
+import javax.swing.JOptionPane;
+
+public class Main {
+	
+	public static void main(String[] args) {
+	Forca f = new Forca();
+	do {f.executa();
+	System.out.println(f.mostraPalavra());
+	System.out.println(f.getResposta());
+	System.out.println(f.getResposta().equals(f.mostraPalavra()));
+	}while(f.getCounterErros()!=7||f.getResposta().equals(f.mostraPalavra()));
+	if (f.getCounterErros()==7)
+		JOptionPane.showMessageDialog(null, "Melhore");
+	if (f.getResposta().equals(f.mostraPalavra()))
+		JOptionPane.showMessageDialog(null, "Parabéns, mandou bem!\n A palavra era: "+f.getResposta());
+	}
+		
+}

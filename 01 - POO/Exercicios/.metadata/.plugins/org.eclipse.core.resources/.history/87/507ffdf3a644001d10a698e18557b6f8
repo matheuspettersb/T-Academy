@@ -1,0 +1,45 @@
+package exPOO05;
+
+import java.util.Random;
+
+public class Forca {
+	private static String[] palavras = 
+			{"Impostor", "Grosso", "Sozinho", "Memoria", "Ascender", "Torre", "As", "Selado", "Cavalo", "Valquiria",
+			"Deus", "Cinema", "Piada", "Rainha", "Orgulho", "Duvida", "Chimpanze", "Sonegar", "Imposto", "Puro"};
+	private String resposta;
+	private int counterErros;
+	private char[] acertos;
+	
+	public Forca() {
+		Random r = new Random();
+		int i = r.nextInt(palavras.length);
+		resposta = palavras[i];
+		counterErros = 0;
+	}
+	
+	public String mostraPalavra() {
+		char[] palavraQuebrada = new char[resposta.length()];
+		for (int i=0; i<this.resposta.length();i++) {
+			for (int j=0; j<this.acertos.length; j++) {
+				if (this.resposta.charAt(i)==acertos[j]) {
+					palavraQuebrada[i] = resposta.charAt(i);
+				}
+			}
+		}
+		
+		for (int i=0; i<this.resposta.length();i++) {
+			if (palavraQuebrada[i] == null);
+		}
+		
+		return null;
+	}
+	
+	public char[] getAcertos() {
+		return this.acertos;
+	}
+	
+	
+	
+	
+
+}
