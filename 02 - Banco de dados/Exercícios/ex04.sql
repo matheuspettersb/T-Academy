@@ -56,25 +56,54 @@ SELECT nome_colaborador, nome_cargo, salario_cargo FROM colaboradores, cargos
 WHERE colaboradores.codigo_cargo = cargos.codigo_cargo;
 
 #2
-SELECT nome_cargo, COUNT(nome_cargo) FROM colaboradores c, cargos ca
+SELECT nome_cargo, COUNT(nome_cargo) AS "Qtd. pessoas no cargo" FROM colaboradores c, cargos ca
 WHERE c.codigo_cargo = ca.codigo_cargo
 GROUP BY  ca.nome_cargo;
 
 #3
-SELECT genero_colaborador, (SUM(salario_cargo)/COUNT(genero_colaborador)) FROM colaboradores c, cargos ca
+SELECT genero_colaborador, (SUM(salario_cargo)/COUNT(genero_colaborador)) "Média salarial do gênero" FROM colaboradores c, cargos ca
 WHERE c.codigo_cargo = ca.codigo_cargo
 GROUP BY c.genero_colaborador;
 
 #4
-SELECT nome_colaborador, nascimento_colaborador FROM colaboradores c,
-WHERE DATEDIFF(year, nascimento_colaborador, NOW()) <= 30;
-# AND DATEDIFF(year, nascimento_colaborador, (DATE_FORMAT(NOW(),"d%-m%-Y%"))) >= 20;
+SELECT nome_colaborador, nascimento_colaborador FROM colaboradores c
+WHERE ((SELECT DATEDIFF(CURRENT_DATE(), nascimento_colaborador)/365.25)) <= 30
+AND ((SELECT DATEDIFF(CURRENT_DATE(), nascimento_colaborador)/365.25)) >= 20;
 
 #5
+SELECT estado_trabalho, COUNT(estado_trabalho) AS "Colaboradores no estado" FROM colaboradores
+GROUP BY estado_trabalho;
+
 #6
+SELECT cidade_trabalho, COUNT(cidade_trabalho) AS "Colaboradores na cidade" FROM colaboradores
+GROUP BY cidade_trabalho;
+
 #7
+SELECT COUNT(genero_colaborador) AS "Colaboradoras com mais de 30 no PR" FROM colaboradores
+WHERE genero_colaborador = "Feminino"
+AND estado_trabalho = "PR"
+AND ((SELECT DATEDIFF(CURRENT_DATE(), nascimento_colaborador)/365.25)) >= 30;
+
 #8
+SELECT cidade_trabalho, (SUM(salario_cargo)/COUNT(cidade_trabalho)) AS "Média salarial por cidade" FROM colaboradores c, cargos ca
+WHERE c.codigo_cargo = ca.codigo_cargo
+GROUP BY c.cidade_trabalho;
+
 #9
+SELECT AVG(salario_cargo) AS "Média salarial total" FROM colaboradores c, cargos ca
+WHERE c.codigo_cargo = ca.codigo_cargo;
+
 #10
+SELECT * FROM colaboradores c, cargos ca
+WHERE c.codigo_cargo = ca.codigo_cargo
+AND (SELECT DATEDIFF(CURRENT_DATE(), nascimento_colaborador)/365.25) = (SELECT MAX((SELECT DATEDIFF(CURRENT_DATE(), nascimento_colaborador)/365.25)) FROM colaboradores);
+
 #11
+SELECT COUNT(nome_colaborador) FROM colaboradores
+WHERE ((SELECT DATEDIFF(CURRENT_DATE(), nascimento_colaborador)/365.25)) <= 32
+AND ((SELECT DATEDIFF(CURRENT_DATE(), nascimento_colaborador)/365.25)) >= 22;
+
 #12
+DROP TABLE colaboradores, cargos;
+
+DROP DATABASE ex04;
