@@ -153,11 +153,38 @@ ON c.cd_prof = p.cd_prof
 GROUP BY nm_prof;
 
 #9
-SELECT nm_prof, COUNT(cd_aluno) FROM 
+SELECT nm_prof, nm_curso, COUNT(cd_aluno) AS qt_alunos
+FROM alunos_cursos ac
+RIGHT JOIN cursos c
+ON ac.cd_curso = c.cd_curso
+RIGHT JOIN professores p 
+ON p.cd_prof = c.cd_prof
+GROUP BY nm_prof, nm_curso;
 
 #10
+SELECT nm_aluno, nm_curso, valor_curso, nm_prof FROM alunos_cursos ac
+LEFT JOIN alunos a
+ON a.cd_aluno = ac.cd_aluno
+INNER JOIN cursos c
+ON c.cd_curso = ac.cd_curso
+INNER JOIN professores p
+ON c.cd_prof = p.cd_prof;
+
 #11
+SELECT AVG(valor_curso) FROM cursos;
+
 #12
+SELECT c.nm_curso, c.valor_curso, COUNT(ac.cd_aluno) FROM alunos_cursos ac
+RIGHT JOIN cursos c
+ON ac.cd_curso = c.cd_curso
+WHERE c.valor_curso >= (SELECT AVG(valor_curso) FROM cursos)
+GROUP BY c.nm_curso;
+
+#13
+DELETE FROM alunos WHERE ((SELECT DATEDIFF(CURRENT_DATE(), nascimento_aluno)/365.25)) > 30;
+
 #14
+DROP TABLE alunos, alunos_cursos, cursos, professores;
+DROP DATABASE ex07;
 
 
