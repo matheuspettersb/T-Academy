@@ -199,6 +199,7 @@ INNER JOIN professores p
 ON p.codigo_prof = m.codigo_prof
 WHERE p.nome_prof = "Paula"
 AND m.nome_materia = "Sociologia";
+#catia e ingles n tinha nada
 
 #11
 SELECT COUNT(a.nome_aluno) FROM alunos_turmas alt

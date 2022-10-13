@@ -111,19 +111,53 @@ GROUP BY a.nm_aluno;
 SELECT status_curso, COUNT(cd_curso) AS "Quantidade" FROM alunos_cursos
 GROUP BY status_curso;
 
-#3 CONTINUAR DAQUI :)
-SELECT 
+#3
+SELECT a.nm_aluno, nm_curso FROM alunos_cursos ac
+INNER JOIN alunos a
+ON a.cd_aluno = ac.cd_aluno
+INNER JOIN cursos c
+ON c.cd_curso = ac.cd_curso
+WHERE ac.status_curso = "Concluído"
+AND c.valor_curso >=1000;
 
 #4
+SELECT COUNT(nm_aluno) FROM alunos
+GROUP BY estado_aluno;
+
 #5
+SELECT a.nm_aluno, c.nm_curso FROM alunos_cursos ac
+INNER JOIN alunos a
+ON a.cd_aluno = ac.cd_aluno
+INNER JOIN cursos c
+ON c.cd_curso = ac.cd_curso
+WHERE ac.status_curso = "Não Iniciado";
+
 #6
+SELECT a.nm_aluno, COUNT(ac.cd_curso) FROM alunos a
+INNER JOIN alunos_cursos ac
+ON a.cd_aluno = ac.cd_aluno
+WHERE ((SELECT DATEDIFF(CURRENT_DATE(), a.nascimento_aluno)/365.25)) < 18
+GROUP BY a.nm_aluno;
+
 #7
+SELECT c.nm_curso, c.valor_curso, COUNT(ac.cd_aluno) FROM alunos_cursos ac
+INNER JOIN cursos c
+ON c.cd_curso = ac.cd_curso
+WHERE c.valor_curso = (SELECT MAX(valor_curso) FROM cursos)
+GROUP BY c.nm_curso;
+
 #8
+SELECT p.nm_prof, COUNT(c.cd_curso) FROM professores p
+INNER JOIN cursos c
+ON c.cd_prof = p.cd_prof
+GROUP BY nm_prof;
+
 #9
+SELECT nm_prof, COUNT(cd_aluno) FROM 
+
 #10
 #11
 #12
-#13
 #14
 
 
