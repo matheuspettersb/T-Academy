@@ -4,17 +4,17 @@ USE avaliacao;
 
 CREATE TABLE cor (
     cd_cor  INT AUTO_INCREMENT PRIMARY KEY,
-    ds_cor  VARCHAR(20)
+    nm_cor  VARCHAR(20)
 );
 
 CREATE TABLE combustivel (
     cd_combustivel  INT AUTO_INCREMENT PRIMARY KEY,
-    ds_combustivel  VARCHAR(30)
+    nm_combustivel  VARCHAR(30)
 );
 
 CREATE TABLE marca (
     cd_marca    INT AUTO_INCREMENT PRIMARY KEY,
-    ds_marca    VARCHAR(30)
+    nm_marca    VARCHAR(30)
 );
 
 CREATE TABLE modelo (
@@ -25,8 +25,8 @@ CREATE TABLE modelo (
 );
 
 CREATE TABLE endereco (
-    cd_localidade INT PRIMARY KEY,
-    nm_localidade VARCHAR(50)
+    cd_endereco INT PRIMARY KEY,
+    nm_endereco VARCHAR(50)
 );
 
 CREATE TABLE proprietario (
