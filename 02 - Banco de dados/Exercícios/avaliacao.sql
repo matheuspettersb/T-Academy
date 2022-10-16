@@ -20,7 +20,7 @@ CREATE TABLE marca (
 CREATE TABLE modelo (
     cd_modelo   INT AUTO_INCREMENT PRIMARY KEY,
     cd_marca    INT,
-    ds_modelo   VARCHAR(50),
+    nm_modelo   VARCHAR(50),
     FOREIGN KEY (cd_marca) REFERENCES marca (cd_marca)
 );
 
