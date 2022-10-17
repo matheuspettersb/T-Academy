@@ -25,9 +25,9 @@ DELIMITER $$
 
 CREATE PROCEDURE cadastrar (IN nome VARCHAR(30), IN email VARCHAR(50), OUT mensagem VARCHAR(30))
 BEGIN
-DECLARE qtd_email INT DEFAULT 0;
-DECLARE qtd_at INT = 0;
-DECLARE i INT = 1;
+	DECLARE qtd_email INT DEFAULT 0;
+	DECLARE qtd_at INT = 0;
+	DECLARE i INT = 1;
 
 SELECT COUNT(*) INTO qtd_emaiL FROM clientes WHERE email_cliente = email;
 WHILE i < LEN(email)
