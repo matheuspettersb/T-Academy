@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tabelas</title>
+</head>
+<body>
+    <!-- exemplo 1 (tr = table row, td = table divisor) -->
+    <table border="1">
+        <tr>
+            <td rowspan="2">A</td>
+            <td>B</td>
+            <td>C</td>
+        </tr>
+        <tr>
+            <td colspan="2">E</td>
+            
+        </tr>
+    </table>
+    <!-- border esta em desuso, por isso o vermelho -->
+
+    <br>
+
+    <!-- exemplo 02 -->
+    <!-- thead = table head -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Produto</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>arroz</td>
+                <td>R$ 4,00</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>hamburguer</td>
+                <td>R$ 20,00</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>água</td>
+                <td>R$ 3,00</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">foram encontrados 3 registros</td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formularios</title>
+</head>
+<body>
+    <!-- exemplo01 -->
+    <form action="https://www.youtube.com/watch?v=yhtLGnExKYk">
+        <input type="submit" value="Não clique">
+    </form>
+
+    <hr>
+    <!-- exemplo2 -->
+    <form action="https://www.youtube.com/watch?v=yhtLGnExKYk">
+        <label>Digite algo</label>
+        <input type="text">
+
+        <input type="button" value="funciona só com JS">
+
+        <input type="reset" value="limpar campo">
+    </form>
+
+    <hr>
+    <!-- exemplo3 -->
+    <form action="https://www.youtube.com/watch?v=yhtLGnExKYk">
+        <input type="email" required placeholder="E-mail">
+        <input type="color">
+        <input type="date">
+        <input type="password">
+        <input type="file">
+        <input type="submit" value="enviar">
+    </form>
+
+    <hr>
+
+    <!-- ex04 -->
+    <form action="">
+        <fieldset>
+            <legend>turno</legend>
+                <label for="mt">Matutino</label>
+                <input type="checkbox" name="" id="mt">
+                <label for="vp">Vespertino</label>
+                <input type="checkbox" name="" id="vp">
+                <label for="nt">Noturno</label>
+                <input type="checkbox" name="" id="nt">
+        </fieldset>
+        <fieldset>
+            <legend>linguagem</legend>
+                <input type="radio" name="linguagem" id="java">
+                <label for="java">java</label>
+                <input type="radio" name="linguagem" id="csharp">
+                <label for="csharp">c#</label>
+                <input type="radio" name="linguagem" id="python">
+                <label for="python">python</label>
+        </fieldset>
+    </form>
+
+    <textarea></textarea>
+    <!-- html.net -->
+    
+</body>
+</html>

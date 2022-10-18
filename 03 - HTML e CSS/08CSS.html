@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <!-- CSS no html pode estar em qqr lugar desde que dentro do head -->
+    <style>
+        h1{
+            color: #b00b69;
+            background-color: burlywood;
+            width: 400px;
+            /* border-style: dashed;
+            border-color: greenyellow;
+            border-width: 2px; */
+            border: 2px dashed #880d28;
+            /* resumindo 3 em 1^^*/
+            border-radius: 3040 px;
+            text-align: center;
+            margin:10%;
+            padding: 15px;
+            /* margin > borda pra fora, padding > borda pra dentro */
+        }
+
+        h1:hover{
+            background-color: aliceblue;
+            color:#199167
+        }
+
+        #corAzul{
+            color: cornflowerblue;
+        }
+        
+        .corVerde{
+            color:green;
+        }
+
+        .fonte{
+            font-size: 60px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>Título bombástico</h1>
+    <!-- id = #, class = . -->
+
+    <p id="corAzul">Parágrafo 01</p>
+    <p class="corVerde">Parágrafo 02</p>
+    <p class="fonte corVerde">Parágrafo 03 GIGA</p>
+    <!-- id é único, class não -->
+</body>
+</html>
