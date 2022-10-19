@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- estilo css -->
+    <link rel="stylesheet" href="estilos.css">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <!-- class: [tipo da navbar] [até q resolução] mostra em formato desktop] cor background -->
+    <!-- se quiser trocar a cor p/ exemplo ode criar outra classe e sobrescrever -->
+    <!-- collorzilla, site pra pegar cor ou gerar gradiente -->
+    <nav class="navbar navbar-expand-lg fundoNavBar">
+        <div class="container-fluid">
+          <a class="navbar-brand navegacao" href="#">Navegação</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- me-auto = Menu>> , ms-auto <<menu -->
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html">Início</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="destinos.html">Destinos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contato.html">Contato</a>
+              </li>
+            </ul>
+        
+          </div>
+        </div>
+      </nav>
+
+      <!-- banner -->
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="imagens/banners/1.webp" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="imagens/banners/2.webp" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="imagens/banners/3.webp" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button> 
+      </div>
+
+      <!-- conteúdo principal -->
+      <main class="container-fluid">
+        <div class="row titulo"></div>
+          <div class="col-12 titulo">
+            <h1>Conheça todos os destinos</h1>
+          </div>
+        </div>
+
+        <div class="row destinos">
+          <div class="col-lg-6 col-md-3">
+            <div class="card cards_destinos">
+              <img src="imagens/destinos/1.webp" alt="">
+              <p class="titulos">Golden Gate Brindge</p>
+              <p>Zaheer is the leader of the Red Lotus, a martial arts expert, and an anarchist, who strongly believes in the foundation of a new world without the Order of the White Lotus, the four nations, or the Avatar. After the Harmonic Convergence of 171 AG, he also became an airbender and, after having let go of his final earthly tether, he unlocked the ability of flight, becoming the second person ever to have done so.</p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-3">
+            <div class="card cards_destinos">
+              <img src="imagens/destinos/2.webp" alt="">
+              <p class="titulos">Ilha bonita (provavelmente no caribe)</p>
+              <p>While in pursuit of his goals, Zaheer and three of his comrades were captured and imprisoned in separate, high-security prisons. Upon becoming an airbender thirteen years later, he escaped the custody of the Order of the White Lotus and subsequently freed his allies from prison, including his girlfriend P'Li. He threw the Earth Kingdom into chaos by killing the Earth Queen and attempted to end the Avatar Cycle by killing Avatar Korra while she was in the Avatar State. This attempt failed and Zaheer's comrades were killed, leaving him as the only survivor of their group of four.</p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-3">
+            <div class="card cards_destinos">
+              <img src="imagens/destinos/3.webp" alt="">
+              <p class="titulos">Ponte da Torre de Londres</p>
+              <p>Following his defeat, Zaheer was once again imprisoned, this time in a new facility near Republic City. To his disappointment, he heard of Kuvira placing the people of the Earth Kingdom under her military dictatorship, thus rendering his attempt to free them from oppression futile. Hoping Korra could stop her, Zaheer helped Korra in 174 AG to meditate into the Spirit World and let go of her fear of him and of "what might have been".</p>
+
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-3">
+            <div class="card cards_destinos">
+              <img src="imagens/destinos/4.webp" alt="">
+              <p class="titulos">praia photoshop (muito linda)</p>
+              <p>Zaheer joined the Red Lotus as a teenager and learned about Raava and Vaatu, and Avatar Wan's decision to separate them, which he believed disrupted the world's balance. During his youth, he met a young firebender named P'Li, whom he saved from the clutches of a warlord intending to make her his personal assassin. Following this, Zaheer convinced P'Li to join the ranks of the Red Lotus, and the two eventually formed a romantic relationship.</p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-3">
+            <div class="card cards_destinos">
+              <img src="imagens/destinos/5.webp" alt="">
+              <p class="titulos">Windfall Island</p>
+              <p>Windfall Island is a recurring location in The Legend of Zelda series. It is a market town in the Great Sea, and is known for having the highest population of all the islands in the game. People from all over the world come to Windfall Island, and as such, the town is always lively. Many sailors have found their way here, although their ships are never around.</p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-3">
+            <div class="card cards_destinos">
+              <img src="imagens/destinos/6.webp" alt="">
+              <p class="titulos">praia com aviao wtf</p>
+              <p> In 158 AG, Unalaq, a fellow Red Lotus member, devised a plan to kidnap Korra which Zaheer supported, as they intended to use her to re-open the spirit portals and free Vaatu, while at the same time training her in bending and the ways of the Red Lotus. Although Unalaq ultimately did not go through with the attempted abduction and remained undiscovered, Zaheer, Ghazan, P'Li, and Ming-Hua went on with his plan, though they were defeated and imprisoned by Tenzin, Tonraq, Zuko, and Sokka. Despite being subjected to relentless interrogation, Zaheer and his associates refused to speak of their motives at any point.</p>
+            </div>
+          </div>
+        </div>
+
+      </main>
+</body>
+<!-- Rodapé -->
+<footer>
+  <p>Desenvolvido por Matheus - 2022</p> 
+</footer>
+</html>
