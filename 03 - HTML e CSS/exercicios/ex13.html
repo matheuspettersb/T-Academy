@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex13</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="row">
+        <div class="col-6 offset-3 geral">
+            <h3>Gerenciamento de Notas</h3>
+            <div class="card cards">
+                <fieldset>
+                    <h5>Dados do aluno:</h5>
+                    <br>
+                    <div class="row">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Seu nome:</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Seu nome">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Nota 1:</label>
+                            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Nota 1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Nota 2:</label>
+                            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Nota 2">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Gênero:</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Gênero">
+                        </div>
+                    </div>
+                </fieldset>
+                <input class="btn btn-primary" type="submit" value="Cadastrar aluno">
+            </div>
+            <hr>
+            <div class="card cards">
+                <p></p>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Nota 1</th>
+                        <th scope="col">Nota 2</th>
+                        <th scope="col">Média</th>
+                        <th scope="col">Situação</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td scope="row">Benjamin Tennyson</td>
+                        <td>10</td>
+                        <td>10</td>
+                        <td>10 (aliens)</td>
+                        <td>Aprovado</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <h5>Dados:</h5>
+                  <p id="p13_1"></p>
+                  <p id="p13_2"></p>
+                  <p id="p13_3"></p>
+            </div>
+        </div>
+    </div>
+</body>
+<footer>
+    <p>Desenvolvido por Matheus - 2022</p> 
+</footer>
+</html>
