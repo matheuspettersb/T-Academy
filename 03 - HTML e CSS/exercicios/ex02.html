@@ -18,8 +18,10 @@
                     <fieldset>
                         <label for="numero">Informe o valor:</label>
                         <br>
-                        <input type="number" name="numero1" id="numero" placeholder="0,00" class="pagamento">
-                        <br>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">R$</span>
+                            <input name="numero" type="number" class="form-control" placeholder="0,00" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
                         <div class="row">
                             <div class="col-6">
                                 <input type="radio" name="radio1" id="radio1">

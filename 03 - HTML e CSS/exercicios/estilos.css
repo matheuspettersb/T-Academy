@@ -32,3 +32,35 @@ footer p{
     font-size: 12px;
     margin-top: 25px;
 }
+
+.e14titulo{
+    text-align: center;
+}
+
+.alinhamento{
+    padding: 10px;
+}
+
+.imgHoroscopo{
+    filter: blur(2px);
+    position: fixed;
+
+}
+
+.horoscopo h4{
+    margin-bottom: 10px;
+}
+
+.form_item{
+    margin-bottom: 10px;
+}
+
+/* alinhamento dos botões, essa é a braba */
+.agruparBotoes{
+    display: flex;
+    justify-content: space-between;
+}
+
+.agruparBotoes input{
+    width: 33%;
+}
