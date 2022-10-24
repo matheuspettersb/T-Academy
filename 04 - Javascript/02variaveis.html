@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variaveis</title>
+
+    <script>
+        //variavel pode ser qqr coisa, sem tipagem
+
+        //VAR, declarando os tipos de variáveis
+        let nome = "Letícia";   //era var, alterado pro if
+        var num = 1;
+        var bool = true;
+        //quando é var pode trocar o tipo de variável no meio da execução
+
+        if (nome=="Letícia"){
+            let nome = "Péricles"
+            document.write(nome);
+            document.write("<br>");
+
+        }
+
+
+        //LET - se fizer alterações dentro de alguma estrutura entre chaves (fi, while, etc) muda só dentro da chave,
+        // mas não no escopo global
+        let idade = 23;
+
+        //cosntantes, não alterável
+        const cidade = "Blumenau";
+            //cidade = gaspar; - se colocar da erro
+
+        document.write(nome);
+        document.write("<hr>");
+        document.write(idade);
+        document.write("<hr>");
+        document.write(cidade);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

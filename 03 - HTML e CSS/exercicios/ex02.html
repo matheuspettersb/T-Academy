@@ -8,35 +8,36 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="estilos.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <div class="row">
         <div class="col-4 offset-4 geral">
-            <form action="">
                 <h2>Pagamento:</h2>
                 <div class="card cards">
                     <fieldset>
                         <label for="numero">Informe o valor:</label>
-                        <br>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1">R$</span>
-                            <input name="numero" type="number" class="form-control" placeholder="0,00" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="row">
-                            <div class="col-6">
-                                <input type="radio" name="radio1" id="radio1">
-                                <label for="radio1" class="pagamento">Pagamento a vista</label>
+                        <form action="">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">R$</span>
+                                <input name="numero" type="number" class="form-control" id="valPag" placeholder="0,00" aria-label="Username" aria-describedby="basic-addon1">
                             </div>
-                            <div class="col-6">
-                                <input type="radio" name="radio1" id="radio2">
-                                <label for="radio2" class="pagamento">Pagamento a prazo</label>
+                            <div class="row">
+                                <div class="col-6">
+                                    <input type="radio" name="radio1" id="pag1">
+                                    <label for="radio1" class="pagamento">Pagamento a vista</label>
+                                </div>
+                                <div class="col-6">
+                                    <input type="radio" name="radio1" id="pag2">
+                                    <label for="radio2" class="pagamento">Pagamento a prazo</label>
+                                </div>
                             </div>
-                        </div>
+                        </form>
                     </fieldset>
-                    <input class="btn btn-primary pagamento" type="submit" value="Realizar pagamento">
+                    <input class="btn btn-primary pagamento" type="submit" onclick="pagamento()" value="Realizar pagamento">
                     </div>
                 </div>
-            </form>
+                <p id="respostaPagamento"></p>
         </div>
     </div>
 </body>

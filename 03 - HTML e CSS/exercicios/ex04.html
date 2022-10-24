@@ -8,6 +8,7 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="estilos.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <div class="row">
@@ -18,42 +19,42 @@
                 <fieldset>
                     <div class="row">
                         <div class="col-6">
-                            <input type="checkbox" name="" id="l1" class="check">
+                            <input type="checkbox" name="" id="l1" onclick="fazerPedido(this.checked)" class="check">
                             <label for="l1">Coxinha</label>
                             <br>
-                            <input type="checkbox" name="" id="l2" class="check">
+                            <input type="checkbox" name="" id="l2" onclick="fazerPedido(this.checked)" class="check">
                             <label for="l2">Pastel</label>
                             <br>
-                            <input type="checkbox" name="" id="l3" class="check">
+                            <input type="checkbox" name="" id="l3" onclick="fazerPedido(this.checked)" class="check">
                             <label for="l3">Bolinho</label>
                             <br>
-                            <input type="checkbox" name="" id="l4" class="check">
+                            <input type="checkbox" name="" id="l4" onclick="fazerPedido(this.checked)" class="check">
                             <label for="l4">Pãozinho</label>
                             <br>
-                            <input type="checkbox" name="" id="l5" class="check">
+                            <input type="checkbox" name="" id="l5" onclick="fazerPedido(this.checked)" class="check">
                             <label for="l5">Suco de Laranja</label>
                             <br>
                         </div>
                         <div class="col-6">
-                            <input type="checkbox" name="" id="l6" class="check">
+                            <input type="checkbox" name="" id="l6" onclick="fazerPedido(this.checked)" class="check">
                             <label for="l6">Cafézinho</label>
                             <br>
-                            <input type="checkbox" name="" id="l7" class="check">
+                            <input type="checkbox" name="" id="l7" onclick="fazerPedido(this.checked)" class="check">
                             <label for="l7">Fatia de Bolo</label>
                             <br>
-                            <input type="checkbox" name="" id="l8" class="check">
+                            <input type="checkbox" name="" id="l8" onclick="fazerPedido(this.checked)" class="check">
                             <label for="l8">Fatia de Torta</label>
                             <br>
-                            <input type="checkbox" name="" id="l9" class="check">
+                            <input type="checkbox" name="" id="l9" onclick="fazerPedido(this.checked)" class="check">
                             <label for="l9">Doguinho</label>
                             <br>
-                            <input type="checkbox" name="" id="l10" class="check">
+                            <input type="checkbox" name="" id="l10" onclick="fazerPedido(this.checked)" class="check">
                             <label for="l10">Croissant</label>
                         </div>
                     </div>
                 </fieldset>
             </div>
-            <p class="p_lanchonete">Total de itens do pedido:</p>
+            <p class="p_lanchonete" id="p_lanchonete">Total de itens do pedido:</p>
         
     </div>
 </body>

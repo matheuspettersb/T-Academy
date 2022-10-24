@@ -8,21 +8,23 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="estilos.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <div class="row">
-        <div class="col-4 offset-4 geral">
-            <form action="">
+        <div class="col-4 offset-2 geral">
+            <div class="card cardtop">
                 <h2>Calcular média:</h2>
-                <div class="card cards">
-                    <label for="nota1">Nota 1:</label>
-                    <input type="number" name="numero1" id="nota1" class="numeros">
-                    <label for="nota2">Nota 2:</label>
-                    <input type="number" name="numero2" id="nota2" class="numeros">
-                    <br>
-                    <input class="btn btn-primary" type="submit" value="Calcular Média" class="numeros">
-                </div>
-            </form>
+                <label for="nota1">Nota 1:</label>
+                <input type="number" name="numero1" id="nota1" class="numeros">
+                <label for="nota2">Nota 2:</label>
+                <input type="number" name="numero2" id="nota2" class="numeros">
+                <input class="btn btn-primary numeros ntbn" type="submit" onclick="media()" value="Calcular Média">
+                <p id="resultadoMedia"></p>
+            </div>
+        </div>
+        <div class="col-4 offset-1 geral">
+            <img src="provinha.png" alt="" class="imagem_provinha">
         </div>
     </div>
 </body>

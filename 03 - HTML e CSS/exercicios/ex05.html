@@ -8,68 +8,70 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="estilos.css">
+    <script src="script.js"></script>
 </head>
 <body>
-    <div class="row">
-        <div class="col-4 offset-4 geral">
-            <h2>Câmbio de moedas</h2>
-            <div class="card cards">
-                <fieldset>
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">$</span>
-                        <input type="number" class="form-control" placeholder="0,00" aria-label="Username" aria-describedby="basic-addon1">
-                    </div>
-                    <div class="row">
-                        <div class="col-4">
-                            <p>Dólar - Real</p>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="usdbrl">
-                                <label class="form-check-label texto_radio" for="usdbrl">
-                                  Dólar para Real (USD > BRL)
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="brlusd">
-                                <label class="form-check-label texto_radio" for="brlusd">
-                                  Real para Dólar (BRL > USD)
-                                </label>
-                              </div>
-                        </div>
-                        <div class="col-4">
-                            <p>Euro - Real</p>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="eurbrl">
-                                <label class="form-check-label texto_radio" for="eurbrl">
-                                  Euro para Real (EUR > BRL)
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="brleur">
-                                <label class="form-check-label texto_radio" for="brleur">
-                                  Real para Euro (BRL > EUR)
-                                </label>
-                              </div>
-                        </div>
-                        <div class="col-4">
-                            <p>Libra - Real</p>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="gbpbrl">
-                                <label class="form-check-label texto_radio" for="gbpbrl">
-                                  Libra para Real (GBP > BRL)
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="brlgbp">
-                                <label class="form-check-label texto_radio" for="brlgbp">
-                                  Real para Libra (BRL > GBP)
-                                </label>
-                              </div>
-                        </div>
-                    </div>
-                </fieldset>
+  <div class="row">
+    <div class="col-4 offset-4 geral">
+      <h2>Câmbio de moedas</h2>
+      <div class="card cards">
+        <fieldset>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">$</span>
+            <input type="number" class="form-control" id="valorConversao" placeholder="0,00" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <p>Dólar - Real</p>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="usdbrl" onclick="converter(1)">
+                <label class="form-check-label texto_radio" for="usdbrl">
+                Dólar para Real (USD > BRL)
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="brlusd" onclick="converter(2)">
+                <label class="form-check-label texto_radio" for="brlusd">
+                Real para Dólar (BRL > USD)
+                </label>
+              </div>
             </div>
-        
+            <div class="col-4">
+            <p>Euro - Real</p>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="eurbrl" onclick="converter(3)">
+                <label class="form-check-label texto_radio" for="eurbrl">
+                  Euro para Real (EUR > BRL)
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="brleur" onclick="converter(4)">
+                <label class="form-check-label texto_radio" for="brleur">
+                  Real para Euro (BRL > EUR)
+                </label>
+              </div>
+            </div>
+            <div class="col-4">
+              <p>Libra - Real</p>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="gbpbrl" onclick="converter(5)">
+                <label class="form-check-label texto_radio" for="gbpbrl">
+                  Libra para Real (GBP > BRL)
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="brlgbp" onclick="converter(6)">
+                <label class="form-check-label texto_radio" for="brlgbp">
+                  Real para Libra (BRL > GBP)
+                </label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <p id="respostaValor"></p>
+      </div>
     </div>
+  </div>
 </body>
 <footer>
   <p>Desenvolvido por Matheus - 2022</p> 

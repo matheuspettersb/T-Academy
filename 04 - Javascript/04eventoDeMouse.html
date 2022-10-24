@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento de Mouse</title>
+
+    <script>
+        function mensagem(){
+            window.alert("Você clicou no botão...");
+        }
+
+        function enviar(){
+            //obter elemento de input
+            let nome = document.getElementById("nome");
+
+            //condicional
+            if(nome.value == ""){       //importante, pra campos de input sempre usar o value e não o innerText, por exemplo
+                alert("informe um nome");
+            }else if(nome.value.length < 3){
+                alert("o nome precisa ter pelo menos 3 letras");
+            }else{
+                alert("O nome informado foi: "+nome.value);
+            }
+
+            //limpar
+            nome.value = "";
+
+            // cursor no elemento
+            nome.focus();
+
+        }
+    </script>
+</head>
+<body>
+    <button onclick="mensagem()">CUIDADO! NÃO CLIQUE!</button>
+    <hr>
+    <input type="text" id="nome" placeholder="Informe um nome">
+    <button onclick="enviar()">Enviar</button>
+</body>
+</html>

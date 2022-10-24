@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    
+    <script>
+
+        window.onload = function(){
+        //obter o elemento h1
+        let h1 = document.getElementsByTagName("h1")[0]; //colchetes = trabalha como vetor, assim seleciona o primeiro h1 da pág
+        // document.write(h1.innerText); //se deixar só o h1 dá "undefinned"
+        
+        // alterando o texto do innerText
+
+        h1.innerText = "olá mundo! amogus" // innerText - só texto
+        h1.innerHTML = "olá mundo! <br> Danonão grosso" // innerHTML - pra usar tags HTML tmb
+        h1.style.color = "cornflowerblue"    //só uma estilização por vez
+
+        h1 = document.getElementsByClassName("titulo")[0]; //mesmo c classe ainda tem que puxar a parada de vetor
+
+        h1.style.color = "#b00b69"
+        h1.innerText = "texto alterado..."
+
+        h1 = document.getElementById("titulo"); // PEGA SÓ O PRIMEIRO ELEMENTO C ESSE ID
+        h1.innerHTML = "Standing here <br>I realize <br>You're just like me <br>Trying to make history";
+        }
+
+    </script>
+</head>
+<body>
+    <h1>é o pijas</h1>
+    <!-- se jogar o script aqui em baixo ele carrega o script depois, ai funciona o innerHTML (sem o onload) -->
+    <h1 class="titulo">segundo h1</h1>
+    <h1 id="titulo">h1 3: revengence</h1>
+</body>
+</html>

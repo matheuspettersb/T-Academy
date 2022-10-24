@@ -8,21 +8,24 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="estilos.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <div class="row">
         <div class="col-4 offset-4 geral">
             <h2>Selecione uma cidade</h2>
             <div class="card cards">
-                <select class="form-select form-select-md mb-3" aria-label=".form-select-lg example">
+                <select id="selectCidade" onchange="mudaCidade(this.value)" class="form-select form-select-md mb-3" aria-label=".form-select-lg example">
                     <option selected>Selecionar</option>
                     <option value="1">Blumenau</option>
                     <option value="2">Indaial</option>
                     <option value="3">Gaspar</option>
                 </select>
+                <p id="cidadeTxt"></p>
             </div>
         </div>
     </div>
+    <img src="city.webp" class="imagem_cidade" alt="">
 </body>
 <footer>
     <p>Desenvolvido por Matheus - 2022</p> 
