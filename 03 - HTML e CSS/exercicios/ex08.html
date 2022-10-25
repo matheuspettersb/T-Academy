@@ -14,39 +14,41 @@
     <div class="row">
         <div class="col-4 offset-4 geral">
             <h2>World Clock</h2>
+            <!-- world cock ( ͡° ͜ʖ ͡°) -->
+
             <div class="card cards">
                 <fieldset>
                     <p>Informe o horário atual:</p>
                     <div class="input-group mb-3">
-                        <input type="time" class="form-control" placeholder="0.00" aria-describedby="basic-addon1" id="">
+                        <input type="time" class="form-control" placeholder="0.00" aria-describedby="basic-addon1" id="horario" onchange="converteHora()">
                     </div>
                     <p>Selecione o fuso-horário:</p>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="rel1">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="rel1" onchange="converteHora(1)">
                         <label class="form-check-label texto_radio" for="rel1">
                           Lisboa
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="rel2">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="rel2" onchange="converteHora(2)">
                         <label class="form-check-label texto_radio" for="rel2">
                           Nova Iorque
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="rel3">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="rel3" onchange="converteHora(3)">
                         <label class="form-check-label texto_radio" for="rel3">
                           Cidade do México
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="rel4">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="rel4" onchange="converteHora(4)">
                         <label class="form-check-label texto_radio" for="rel4">
                           Tóquio
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="rel5">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="rel5" onchange="converteHora(5)">
                         <label class="form-check-label texto_radio" for="rel5">
                           Berlim
                         </label>
