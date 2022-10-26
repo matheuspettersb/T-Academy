@@ -431,20 +431,49 @@ function mexeTabela(){
 //ex12
 let dadosTabela = [];
 
-function cadastrarTabela(){
+atualizaTabela(){
     let tabela = document.getElementById("tabela");
+    tabela.innerHTML = ""
+    // laço repeticao
+    for (let i=0; i<dados.length; i++){
+        // criar linha
+        let linha = tabela.insertRow(-1);
+
+        // criar colunas
+        let col1 = linha.insertCell(0);
+        let col2 = linha.insertCell(1);
+        let col3 = linha.insertCell(2);
+        let col4 = linha.insertCell(3);
+        let col5 = linha.insertCell(4);
+        let col6 = linha.insertCell(5);
+
+        col1.innerHTML = i+1;
+        col2.innerHTML = dados[i].nome;
+        col3.innerHTML = dados[i].cidade;
+        //col4.innerHTML = "<button class='btn btn-danger' onclick='remover("+i+")'>Remover</button>";
+        col4.innerHTML = `<button class="btn btn-danger" onclick=remover(${i})>Remover</button>`
+}
+
+function cadastrar(){
     let nome = document.getElementById("nome");
     let nasc = document.getElementById("nasc");    
     let tel = document.getElementById("tel");    
     let email = document.getElementById("email");
 
-    
+    let obj = {
+        "nome":nome.value,
+        "nascimento":nasc.value,
+        "tel":tel.value,
+        "email":email.value
+    }
+    dadosTabela.push(obj);
+    atualizaTabela();
 }
 
-function excluirTabela(){
+function excluir(){
 
 }
 
-function alterarTabela(){
+function alterar(){
 
 }
