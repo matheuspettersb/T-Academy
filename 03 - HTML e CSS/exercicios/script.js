@@ -336,11 +336,12 @@ function tabuar(){
 }
 
 
-var votos1 = 0;
-var votos2 = 0;
-var votos3 = 0;
-var votos4 = 0;
-var vnulos = 0;
+let votos1 = 0;
+let votos2 = 0;
+let votos3 = 0;
+let votos4 = 0;
+let vnulos = 0;
+
 function votos(id){
     let p1 = document.getElementById("p_1");
     let p2 = document.getElementById("p_2");
@@ -373,29 +374,28 @@ function votos(id){
             break;
     }
 
-    alert((votos1+votos2+votos3+votos4+vnulos));
     p6.innerHTML = "Quantidade total de votos: "+(votos1+votos2+votos3+votos4+vnulos);
     p7.innerHTML = "Candidato com mais votos:  "
 
     let n = getMaisVotos();
-    alert(n)
-    if(votos1 = n){
+    if(votos1 == n){
         p7.innerHTML += "Candidato 1, "
     }
-    if(votos2 = n){
+    if(votos2 == n){
         p7.innerHTML += "Candidato 2, "
     }
-    if(votos3 = n){
+    if(votos3 == n){
         p7.innerHTML += "Candidato 3, "
     }
-    if(votos4 = n){
+    if(votos4 == n){
         p7.innerHTML += "Candidato 4, "
     }
     p7.innerHTML = p7.innerHTML.substring(0, p7.innerHTML.length-2);
+    
 }
 
 function getMaisVotos(){
-    var n=0;
+    let n=0;
     if (votos1>n){
         n = votos1;
     }
@@ -408,5 +408,43 @@ function getMaisVotos(){
     if (votos4>n){
         n = votos4;
     }
+    if (n == 0){
+        return -1;
+    }
     return n;
+}
+
+let qntProd = 0;
+function mexeTabela(){
+    let tabela = document.getElementById("tabelongus");
+    let prod = document.getElementById("produto11");
+    let marca = document.getElementById("marca11");
+    let val = document.getElementById("valor11");
+    let p = document.getElementById("p11");
+    tabela.innerHTML = tabela.innerHTML +`<tr><td>${prod.value}</td><td>${marca.value}</td><td>${val.value}</td></tr>`
+    qntProd += 1;
+    p.innerText = "Quantidade total de produtos: "+qntProd;
+}
+
+
+
+//ex12
+let dadosTabela = [];
+
+function cadastrarTabela(){
+    let tabela = document.getElementById("tabela");
+    let nome = document.getElementById("nome");
+    let nasc = document.getElementById("nasc");    
+    let tel = document.getElementById("tel");    
+    let email = document.getElementById("email");
+
+    
+}
+
+function excluirTabela(){
+
+}
+
+function alterarTabela(){
+
 }

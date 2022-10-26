@@ -20,25 +20,34 @@
                     <div class="row">
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Produto:</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nome do produto">
+                            <input type="text" class="form-control" id="produto11" placeholder="Nome do produto">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Marca do produto</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nome da marca">
+                            <input type="text" class="form-control" id="marca11" placeholder="Nome da marca">
                         </div>
                         <label for="exampleFormControlInput1" class="form-label">Valor do produto:</label>
                         <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1">R$</span>
-                            <input type="number" class="form-control" placeholder="0,00" aria-label="Username" aria-describedby="basic-addon1">
+                            <span class="input-group-text">R$</span>
+                            <input type="number" class="form-control" id="valor11" placeholder="0,00" aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                     </div>
-                    <input class="btn btn-primary" type="submit" value="Cadastrar produto">
+                    <input class="btn btn-primary" type="button" value="Cadastrar produto" onclick="mexeTabela()">
                 </fieldset>
             </div>
             <div class="card cards">
                 <table>
-                    tabelongus
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Marca</th>
+                            <th>Valor (R$)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelongus"></tbody>
                 </table>
+                <hr>
+                <p id="p11"></p>
             </div>
         </div>
     </div>
