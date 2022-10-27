@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lojão do Pog - Pesquisa</title>
+
+    <!-- Literal só pro carrinho -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <!-- CSS e JS -->
+    <link rel="stylesheet" href="style.css">    
+    <script src="script.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fundoNav">
+        <div class="container-fluid">
+            <a class="navbar-brand tituloNav" href="index.html">Lojão do Pog</a>
+            <div class="collapse, navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item busca">
+                        <input class="form-control" id="barraPesquisa" type="search" placeholder="Pesquisa">
+                    </li>
+                    <li class="busca">
+                        <a href="pesquisa.html">
+                            <button class="btn btn-outline-light" type="button" onclick="termoPesquisar()" id="btnPesquisa">Buscar</button>
+                        </a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="armas.html">Armas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="itens.html">Itens</a></li>
+                    <li class="nav-item"><a class="nav-link" href="roupas.html">Roupas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="carrinho.html">Carrinho<i class="fa-solid fa-cart-shopping carrinho"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="apresentacao titulo">
+        <h1><u>Lojão do Pog</u></h1>
+    </div>
+    <div class="destaques container-fluid">
+        <h2>Resultado da pesquisa:</h2>
+        <div class="row" id="destaques">
+        </div>
+    </div>
+    <script>
+      pesquisar();
+    </script>
+</body>
+<footer>
+    <h6 class="desc">Desenvolvido por Matheus Petters Bevilaqua - 2022</h6>
+</footer>
+</html>
