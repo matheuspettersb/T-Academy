@@ -292,7 +292,6 @@ function termoPesquisar(){
 function pesquisar(){
     let termoPesquisa = JSON.parse(localStorage.getItem("pesquisa"));
     termoPesquisa = termoPesquisa.toLowerCase();
-    alert(termoPesquisa);
     let espaco = document.getElementById("pesquisaResultados");
     espaco.innerHTML = "";
     let string =`<h1 class="pesquisaRes">Resultado da pesquisa:</h1><div class="row">`;
