@@ -23,6 +23,8 @@ CREATE TABLE comentarios(
     select * from postagens;
     select * from comentarios;
     
+    select * from postagens where cd_postagem = 1;
+    
     select * from postagens order by cd_postagem desc limit 10;
     
     insert into postagens(titulo, autor, descricao) values 
@@ -42,7 +44,14 @@ CREATE TABLE comentarios(
     ("10", "", ""),
     ("11", "", "");
     
+    insert into comentarios(nome, comentario, cd_postagem) values 
+    ("a", "a", 2),
+    ("s", "s", 2);
     
+    DELETE FROM comentarios WHERE cd_postagem = 2;
+    
+    UPDATE postagens SET autor = "aaa", titulo = "a", descricao =  "aaaa" WHERE cd_postagem = 1;
+
     
     
     

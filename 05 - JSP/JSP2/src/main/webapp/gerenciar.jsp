@@ -29,16 +29,19 @@
     <h1 class="intro"><u>Gerenciar publicações</u></h1>
     <div class="row">
     	<div class="col-8 offset-2">
-    		exemplo
     		<div class="card" id="cards">
-    			<div>
-    				<h3>Nome da publicação</h3>
-    				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-    				<h6>Por: autor</h6>
-    				<button class="btn btn-warning">Alterar</button>
-    				<button class="btn btn-danger">Excluir</button>
-    			</div>
+    			<h3 id="h3gerencia">Cadastrar uma nova publicação</h3>
+    			<form action="cadastraPub.jsp" method="post" id="cadastro">
+	    			<label for="titulo" class="form-label">Título:</label>
+  					<input type="text" class="form-control" id="titulo" placeholder="Título da publicação">
+  					<label for="autor" class="form-label">Autor(a):</label>
+  					<input type="text" class="form-control" id="autor" placeholder="Nome do autor(a)">
+  					<label for="mensagem" class="form-label">Mensagem:</label>
+  					<textarea class="form-control" id="mensagem" rows="3"></textarea>
+    				<button class="btn btn-success" id="botao">Cadastrar</button>
+    			</form>
     		</div>
+    		<h2 id="h2gerencia">Todas as publicações:</h2>
     		<%
 			Conexao c = new Conexao();
 			String sql = "SELECT * FROM postagens";
@@ -54,8 +57,9 @@
     				<h3><% out.print(rs.getString(2)); %></h3>
     				<p><% out.print(rs.getString(4)); %></p>
     				<h6>Por: <% out.print(rs.getString(3)); %></h6>
-    				<button class="btn btn-warning">Alterar</button>
-    				<button class="btn btn-danger">Excluir</button>
+    				<a href="alterarPublicacao.jsp?codigo=<%out.print(rs.getInt(1));%>" class="btn btn-warning">Alterar</a>
+    				<a href="excluiPub.jsp?codigo=<%out.print(rs.getInt(1));%>" class="btn btn-danger">Excluir</a>
+    				<a href="publicacoes.jsp?codigo=<%out.print(rs.getInt(1));%>" class="btn btn-outline-dark">Ver publicação</a>
     			</div>
     		</div>
     		<%

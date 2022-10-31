@@ -29,14 +29,6 @@
     <h1 class="intro"><u>Bem vindo ao Blogão do Massa</u></h1>
     <div class="row">
     	<div class="col-8 offset-2">
-			exemplo
-    		<div class="card" id="cards">
-    			<div>
-    				<h3>Nome da publicação</h3>
-    				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-    				<h6>Por: autor</h6>
-    			</div>
-    		</div>
 			<%
 			Conexao c = new Conexao();
 			String sql = "SELECT * FROM postagens ORDER BY cd_postagem DESC LIMIT 10;";
@@ -48,11 +40,13 @@
 			while (rs.next()){
     		%>
     		<div class="card" id="cards">
+    			<a href="publicacoes.jsp?codigo=<%out.print(rs.getInt(1));%>" class="redireciona">
     			<div>
     				<h3><% out.print(rs.getString(2)); %></h3>
     				<p><% out.print(rs.getString(4)); %></p>
     				<h6>Por: <% out.print(rs.getString(3)); %></h6>
     			</div>
+    			</a>
     		</div>
     		<%
 			}

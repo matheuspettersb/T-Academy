@@ -1,14 +1,10 @@
-<%@page import="java.sql.PreparedStatement"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.Statement"%>
-<%@page import="pacotao.Conexao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Blogão do Massa - Postagem</title>
+<title>Blogão do Massa - Alterando</title>
 <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <link rel="stylesheet" href="style.css">
@@ -26,27 +22,26 @@
             </form>
         </div>
     </nav>
+    
+    <h1 class="intro"><u>Gerenciar publicações</u></h1>
     <div class="row">
     	<div class="col-8 offset-2">
+    		<div class="card" id="cards">
     		<%
-    		int codigo = Integer.parseInt(request.getParameter("codigo"));
-			
-    		Conexao c = new Conexao();
-			String sql = "SELECT * FROM postagens WHERE cd_postagem = ?";
-			
-			PreparedStatement ps = c.efetuarConexao().prepareStatement(sql);
-			ps.setInt(1, codigo);
-			
-			ResultSet rs = ps.executeQuery();
-			
-			while(rs.next()){
+    			int codigo = Integer.parseInt(request.getParameter("codigo"));
     		%>
-    			<div class="card" id="postagem">	
-    				<h3><% out.print(rs.getString(2)); %></h3>
-    				<p><% out.print(rs.getString(4)); %></p>
-    				<h6>Por: <% out.print(rs.getString(3)); %></h6>
-    			</div>
-    		<%} %>
+    			<h3 id="h3gerencia">Alterar publicação</h3>
+    			<!-- method post pra deixar escondidinho hihihi -->
+    			<form action="alteraPub.jsp?codigo=<%out.print(codigo);%>" method="post" onsubmit="return checaDados()">
+	    			<label for="titulo" class="form-label">Título:</label>
+  					<input type="text" class="form-control" id="titulo"  name="titulo" placeholder="Título da publicação">
+  					<label for="autor" class="form-label">Autor(a):</label>
+  					<input type="text" class="form-control" id="autor"  name="autor"placeholder="Nome do autor(a)">
+  					<label for="mensagem" class="form-label">Mensagem:</label>
+  					<textarea class="form-control" id="mensagem" rows="3" name="mensagem"></textarea>
+    				<button class="btn btn-primary" type="submit" id="botao">Alterar</button>
+    			</form>
+    		</div>
     	</div>
     </div>
 </body>
