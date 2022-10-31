@@ -1,3 +1,6 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="pacote.Conexao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -31,12 +34,33 @@
 			</tr>
 		</thead>
 		<tbody>
+			<%
+				//conexão c o banco mysql
+				Conexao c = new Conexao();
+				
+				//SQL
+				String sql = "SELECT * FROM pessoas";
+				
+				//Statement
+				//SQL puro = Statement. Se tem algum parametro pra passar, PreparedStatement
+				Statement stmt = c.efetuarConexao().createStatement();
+				
+				//obter dados da tabela pessoas
+				//result set - especifico pra captura de dados
+				ResultSet rs = stmt.executeQuery(sql);
+				
+				//laço de repeticao
+				while (rs.next()){
+					
+			%>
 			<tr>
-				<td>1</td>
-				<td>a</td>
-				<td>12</td>
-				<td><a href="removerPessoa.jsp" class="btn btn-danger">Remover</a></td>	
+			<!-- importante lembrar que em BD as colunas começam sempre no 1 e não n 0 -->
+				<td><% out.print(rs.getInt(1)); %></td>
+				<td><% out.print(rs.getString(2)); %></td>
+				<td><% out.print(rs.getInt(3)); %></td>
+				<td><a href="removerPessoa.jsp?codigo=<%out.print(rs.getInt(1));%>" class="btn btn-danger">Remover</a></td>	
 			</tr>
+			<%} %>
 		</tbody>
 	</table>
 
