@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="pacotao.Conexao"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
@@ -31,40 +32,42 @@
     	<div class="col-8 offset-2">
     		<div class="card" id="cards">
     			<h3 id="h3gerencia">Cadastrar uma nova publicação</h3>
-    			<form action="cadastraPub.jsp" method="post" id="cadastro">
+    			<form action="cadastraPub.jsp" method="post" id="cadastro" onsubmit="return checaDados()">
 	    			<label for="titulo" class="form-label">Título:</label>
-  					<input type="text" class="form-control" id="titulo" placeholder="Título da publicação">
+  					<input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título da publicação">
   					<label for="autor" class="form-label">Autor(a):</label>
-  					<input type="text" class="form-control" id="autor" placeholder="Nome do autor(a)">
+  					<input type="text" class="form-control" id="autor" name="autor" placeholder="Nome do autor(a)">
   					<label for="mensagem" class="form-label">Mensagem:</label>
-  					<textarea class="form-control" id="mensagem" rows="3"></textarea>
+  					<textarea class="form-control" id="mensagem" name="mensagem" rows="3"></textarea>
     				<button class="btn btn-success" id="botao">Cadastrar</button>
     			</form>
     		</div>
     		<h2 id="h2gerencia">Todas as publicações:</h2>
-    		<%
-			Conexao c = new Conexao();
-			String sql = "SELECT * FROM postagens";
-
-			Statement st = c.efetuarConexao().createStatement();
-			
-			ResultSet rs = st.executeQuery(sql);
-
-			while (rs.next()){
-    		%>
-    		<div class="card" id="cards">
-    			<div>
-    				<h3><% out.print(rs.getString(2)); %></h3>
-    				<p><% out.print(rs.getString(4)); %></p>
-    				<h6>Por: <% out.print(rs.getString(3)); %></h6>
-    				<a href="alterarPublicacao.jsp?codigo=<%out.print(rs.getInt(1));%>" class="btn btn-warning">Alterar</a>
-    				<a href="excluiPub.jsp?codigo=<%out.print(rs.getInt(1));%>" class="btn btn-danger">Excluir</a>
-    				<a href="publicacoes.jsp?codigo=<%out.print(rs.getInt(1));%>" class="btn btn-outline-dark">Ver publicação</a>
-    			</div>
+    		<div id="corpo">
+	    		<%
+				Conexao c = new Conexao();
+				String sql = "SELECT * FROM postagens";
+	
+				Statement st = c.efetuarConexao().createStatement();
+				
+				ResultSet rs = st.executeQuery(sql);
+				
+				while (rs.next()){
+	    		%>
+	    		<div class="card" id="cards">
+	    			<div>
+	    				<h3><% out.print(rs.getString(2)); %></h3>
+	    				<p><% out.print(rs.getString(4)); %></p>
+	    				<h6>Por: <% out.print(rs.getString(3)); %></h6>
+	    				<a href="alterarPublicacao.jsp?codigo=<%out.print(rs.getInt(1));%>" class="btn btn-warning">Alterar</a>
+	    				<a href="excluiPub.jsp?codigo=<%out.print(rs.getInt(1));%>" class="btn btn-danger">Excluir</a>
+	    				<a href="publicacoes.jsp?codigo=<%out.print(rs.getInt(1));%>" class="btn btn-outline-dark">Ver publicação</a>
+	    			</div>
+	    		</div>
+	    		<%
+				}
+	    		%>
     		</div>
-    		<%
-			}
-    		%>
     	</div>
     </div>
 </body>

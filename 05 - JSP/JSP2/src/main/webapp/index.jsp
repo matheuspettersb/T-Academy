@@ -43,7 +43,14 @@
     			<a href="publicacoes.jsp?codigo=<%out.print(rs.getInt(1));%>" class="redireciona">
     			<div>
     				<h3><% out.print(rs.getString(2)); %></h3>
-    				<p><% out.print(rs.getString(4)); %></p>
+    				<%
+    					String str = rs.getString(4);
+    					if (str.length()>60) {
+							out.print("<p>"+rs.getString(4).substring(0,60)+"...</p>");		
+    					} else {
+    						out.print("<p>"+rs.getString(4)+"</p>");	
+    					}
+    				%>
     				<h6>Por: <% out.print(rs.getString(3)); %></h6>
     			</div>
     			</a>

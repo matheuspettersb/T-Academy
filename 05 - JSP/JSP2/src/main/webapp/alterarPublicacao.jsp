@@ -31,8 +31,8 @@
     			int codigo = Integer.parseInt(request.getParameter("codigo"));
     		%>
     			<h3 id="h3gerencia">Alterar publicação</h3>
-    			<!-- method post pra deixar escondidinho hihihi -->
-    			<form action="alteraPub.jsp?codigo=<%out.print(codigo);%>" method="post" onsubmit="return checaDados()">
+    			<!-- method post pra deixar no escurinho do cinema -->
+    			<form action="alteraPub.jsp" method="post" onsubmit="return checaDados()">
 	    			<label for="titulo" class="form-label">Título:</label>
   					<input type="text" class="form-control" id="titulo"  name="titulo" placeholder="Título da publicação">
   					<label for="autor" class="form-label">Autor(a):</label>
@@ -40,6 +40,8 @@
   					<label for="mensagem" class="form-label">Mensagem:</label>
   					<textarea class="form-control" id="mensagem" rows="3" name="mensagem"></textarea>
     				<button class="btn btn-primary" type="submit" id="botao">Alterar</button>
+    				<!-- gambiarra pra n deixar a url mto grande -->
+    				<input type="hidden" name="codigo" value="<%out.print(codigo);%>">
     			</form>
     		</div>
     	</div>

@@ -41,7 +41,20 @@
 }
 
 #cadastro label{
-	margin-top:10px
+	margin-top:10px;
+}
+
+#cardComent, #cardCentral{
+	padding:15px;
+	margin-bottom:30px;
+}
+
+#cardCentral{
+	margin-top:60px;
+}
+
+#forms label{
+	margin-top:10px;
 }
 
 #botao{
@@ -53,11 +66,16 @@
 }
 
 #postagem{
-	margin-top:30px;
 	padding:15px;
+	margin-top:30px;
 	margin-bottom:30px;
 	
 }
+
+#redirectConta{
+		margin-top: 10px;
+		color: red;
+	}
 
 .redireciona:link, .redireciona:hover, .redireciona:active, .redireciona:visited{
 	text-decoration:none;

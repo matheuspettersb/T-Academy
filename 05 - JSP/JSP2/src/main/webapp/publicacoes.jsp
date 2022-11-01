@@ -29,24 +29,38 @@
     <div class="row">
     	<div class="col-8 offset-2">
     		<%
-    		int codigo = Integer.parseInt(request.getParameter("codigo"));
-			
-    		Conexao c = new Conexao();
-			String sql = "SELECT * FROM postagens WHERE cd_postagem = ?";
-			
-			PreparedStatement ps = c.efetuarConexao().prepareStatement(sql);
-			ps.setInt(1, codigo);
-			
-			ResultSet rs = ps.executeQuery();
-			
-			while(rs.next()){
+	    		int codigo = Integer.parseInt(request.getParameter("codigo"));
+				
+	    		Conexao c = new Conexao();
+				String sql = "SELECT * FROM postagens WHERE cd_postagem = ?";
+				
+				PreparedStatement ps = c.efetuarConexao().prepareStatement(sql);
+				ps.setInt(1, codigo);
+				
+				ResultSet rs = ps.executeQuery();
+				
+				while(rs.next()){
     		%>
     			<div class="card" id="postagem">	
     				<h3><% out.print(rs.getString(2)); %></h3>
     				<p><% out.print(rs.getString(4)); %></p>
     				<h6>Por: <% out.print(rs.getString(3)); %></h6>
     			</div>
-    		<%} %>
+    		<% } %>
+    		<hr>
+    		<h4>Comentários:</h4>
+    		<div id="cardComent" class="card">
+	    		<form id="forms" action="" method="post" onsubmit="">
+	    			<h5>Comentar:</h5>
+	    			<label for="autor" class="form-label">Autor(a):</label>
+					<input type="text" class="form-control" id="autor" name="autor" disabled readonly>
+					<label for="mensagem" class="form-label">Mensagem:</label>
+					<textarea class="form-control" id="mensagem" rows="3" name="mensagem" disabled></textarea>
+					<button class="btn btn-primary" id="botao" disabled>Comentar</button>
+					<p id="redirectConta"><i>Para realizar comentarios é necessário criar uma conta. Para criar uma conta <a href="centralUsuario.jsp">clique aqui</a></i></p>
+	    		</form>
+    		</div>
+		<!-- comentarios -->
     	</div>
     </div>
 </body>

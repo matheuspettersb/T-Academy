@@ -17,3 +17,18 @@ function checaDados(){
 	}
 	return true;
 }
+
+function validaDadosUser(){
+	let usuario = document.getElementById("usuario2").value;
+	let senha = document.getElementById("senha2").value;
+	
+	if (usuario.length>50 || usuario == ""){
+		alert("O nome de usuário não pode ser vazio e deve ter no máximo 50 caracteres");
+		return false;
+	}
+	if (senha.length>20 || senha == "" ){
+		alert("A senha não pode ser vazia e deve ter no máximo 20 caracteres");
+		return false;
+	}
+	return true;
+}
