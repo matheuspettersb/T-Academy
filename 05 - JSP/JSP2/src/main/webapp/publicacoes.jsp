@@ -19,7 +19,8 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="index.jsp">Blogão do Massa</a>
             <a class="nav-link" href="index.jsp">Home</a>
-            <a class="nav-link" href="gerenciar.jsp">Gerenciar publicações</a>
+            <a class="nav-link" href="todasPublicacoes.jsp">Todas as Publicações</a>
+            <a class="nav-link" href="centralUsuario.jsp">Central do Usuário</a>
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
                 <button class="btn btn-outline-light" type="submit">Pesquisar</button>
@@ -48,6 +49,10 @@
     			</div>
     		<% } %>
     		<hr>
+    		<% 
+	    		String nome = (String)session.getAttribute("usuario");
+	    		if (nome==null){
+    		%>
     		<h4>Comentários:</h4>
     		<div id="cardComent" class="card">
 	    		<form id="forms" action="" method="post" onsubmit="">
@@ -60,6 +65,21 @@
 					<p id="redirectConta"><i>Para realizar comentarios é necessário criar uma conta. Para criar uma conta <a href="centralUsuario.jsp">clique aqui</a></i></p>
 	    		</form>
     		</div>
+    		<% } else { %>
+    			<h4>Comentários:</h4>
+    			<div id="cardComent" class="card">
+	    			<form id="forms" action="comenta.jsp" method="post">
+		    			<h5>Comentar:</h5>
+		    			<label for="autor" class="form-label">Autor(a):</label>
+						<input type="text" class="form-control" id="autor" value="<%out.print(nome);%>" name="autor"readonly>
+						<label for="mensagem" class="form-label">Mensagem:</label>
+						<textarea class="form-control" id="mensagem" rows="3" name="mensagem"></textarea>
+						<button class="btn btn-primary" id="botao">Comentar</button>
+						<!-- gambiarra pra n deixar a url mto grande -->
+    					<input type="hidden" name="codigo" value="<%out.print(codigo);%>">
+	    		</form>
+    		</div>
+    		<% } %>
 		<!-- comentarios -->
     	</div>
     </div>

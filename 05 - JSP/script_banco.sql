@@ -20,19 +20,21 @@ INSERT INTO usuarios values ("admin", "admin", 0, 1);
     
 CREATE TABLE comentarios(
 	cd_comentario 	INT PRIMARY KEY AUTO_INCREMENT,
-    nome 			VARCHAR(40),
     comentario 		VARCHAR(500),
+    situacao		bool,
     cd_postagem		INT,
     nm_user			VARCHAR(50),
     FOREIGN KEY (nm_user) references usuarios(nome),
     FOREIGN KEY (cd_postagem) REFERENCES postagens(cd_postagem)
     );
+    #0 = não aprovado(ainda), 1 = aprovado
     
     select * from postagens;
     select * from comentarios;
 	select * from usuarios;
+    UPDATE usuarios SET nome = "a", senha = "a" WHERE nome = "asd";
     
-    
+    SELECT COUNT(nome) FROM usuarios WHERE nome = "amogus";
 	#drop table comentarios;
     #drop table postagens;
     #drop table usuarios;

@@ -10,20 +10,22 @@
 </head>
 <body>
 	<%
-		String usuario = request.getParameter("usuario");
-		String senha = request.getParameter("senha");
+		String autor = request.getParameter("autor");
+		String mensagem = request.getParameter("mensagem");
+		int codigo = Integer.parseInt(request.getParameter("codigo"));
 		Conexao c = new Conexao();
 		
-		//sql
-		String sql = "INSERT INTO usuarios(nome, senha, banido, admin) VALUES (?, ?, 0, 0)";
+		String sql = "INSERT INTO comentarios (nm_user, comentario, situacao, cd_postagem) VALUES  (?, ?, 0, ?)";
 		PreparedStatement ps = c.efetuarConexao().prepareStatement(sql);
 		ps = c.efetuarConexao().prepareStatement(sql);
-		ps.setString(1, usuario);
-		ps.setString(2, senha);
+		ps.setString(1, autor);
+		ps.setString(2, mensagem);
+		ps.setInt(3, codigo);
 		//cadastra
 		ps.execute();
 		
-		response.sendRedirect("loginUser.jsp?nome="+usuario+"&senha="+senha);
+		
+		response.sendRedirect("publicacoes.jsp?codigo="+codigo);
 	%>
 </body>
 </html>

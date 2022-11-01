@@ -15,7 +15,8 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="index.jsp">Blogão do Massa</a>
             <a class="nav-link" href="index.jsp">Home</a>
-            <a class="nav-link" href="gerenciar.jsp">Gerenciar publicações</a>
+            <a class="nav-link" href="todasPublicacoes.jsp">Todas as Publicações</a>
+            <a class="nav-link" href="centralUsuario.jsp">Central do Usuário</a>
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
                 <button class="btn btn-outline-light" type="submit">Pesquisar</button>
@@ -25,7 +26,11 @@
     <div class="row">
     	<div class="col-6 offset-3">
     		<div class="card" id="cardCentral">
-    			<form id="forms">
+    		<%
+	    		String nome = (String)session.getAttribute("usuario");
+	    		if (nome==null){
+    		%>
+    			<form id="forms" action="loginUser.jsp">
     				<h5>Já tem uma conta? Faça Login:</h5>
 	    			<label for="usuario" class="form-label">Usuário:</label>
 					<input type="text" class="form-control" id="usuario1" name="usuario" placeholder="Seu usuário">
@@ -42,6 +47,28 @@
 					<input type="password" class="form-control" id="senha2" name="senha" placeholder="Sua senha">
 					<button class="btn btn-primary" id="botao">Cadastrar-se</button>
     			</form>
+    		<%
+	    		} else if(nome.equals("admin")){
+    		%>	
+    			<h5>Deseja deslogar?</h5>
+    			<a href="deslogar.jsp"><button class="btn btn-danger">Deslogar</button></a>
+    		<%
+	    		} else {
+    		%>
+    			<h5>Deseja deslogar?</h5>
+    			<a href="deslogar.jsp"><button class="btn btn-danger">Deslogar</button></a>
+    			<hr>
+    			<form id="forms" action="alteraDadosUser.jsp">
+    				<h5>Deseja alterar seus dados?</h5>
+	    			<label for="usuario" class="form-label">Novo usuário:</label>
+					<input type="text" class="form-control" id="usuario" name="usuario" placeholder="Novo usuário">
+					<label for="senha" class="form-label">Nova senha:</label>
+					<input type="password" class="form-control" id="senha" name="senha" placeholder="Nova senha">
+					<button class="btn btn-primary" id="botao">Entrar</button>
+    			</form>
+    		<%
+	    		}
+    		%>
     		</div>
     	</div>
     </div>

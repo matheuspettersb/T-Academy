@@ -1,3 +1,4 @@
+<%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="pacotao.Conexao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -10,20 +11,23 @@
 </head>
 <body>
 	<%
-		String usuario = request.getParameter("usuario");
-		String senha = request.getParameter("senha");
+		String user = (String)session.getAttribute("usuario");
+
+		String usuarioNovo = request.getParameter("usuario");
+		String senhaNova = request.getParameter("senha");
 		Conexao c = new Conexao();
 		
-		//sql
-		String sql = "INSERT INTO usuarios(nome, senha, banido, admin) VALUES (?, ?, 0, 0)";
+		String sql = "UPDATE usuarios SET nome = ?, senha = ? WHERE nome = ?";
 		PreparedStatement ps = c.efetuarConexao().prepareStatement(sql);
 		ps = c.efetuarConexao().prepareStatement(sql);
-		ps.setString(1, usuario);
-		ps.setString(2, senha);
+		ps.setString(1, usuarioNovo);
+		ps.setString(2, senhaNova);
+		ps.setString(3, user);
 		//cadastra
 		ps.execute();
 		
-		response.sendRedirect("loginUser.jsp?nome="+usuario+"&senha="+senha);
+		
+		response.sendRedirect("loginUser.jsp?nome="+usuarioNovo+"&senha="+senhaNova);
 	%>
 </body>
 </html>

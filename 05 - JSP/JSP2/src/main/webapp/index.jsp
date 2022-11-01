@@ -19,14 +19,22 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="index.jsp">Blogão do Massa</a>
             <a class="nav-link" href="index.jsp">Home</a>
-            <a class="nav-link" href="gerenciar.jsp">Gerenciar publicações</a>
+            <a class="nav-link" href="todasPublicacoes.jsp">Todas as Publicações</a>
+            <a class="nav-link" href="centralUsuario.jsp">Central do Usuário</a>
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
                 <button class="btn btn-outline-light" type="submit">Pesquisar</button>
             </form>
         </div>
     </nav>
-    <h1 class="intro"><u>Bem vindo ao Blogão do Massa</u></h1>
+    	<%
+			String nome = (String)session.getAttribute("usuario");
+
+    		if (nome!=null){
+				out.print("<h4 id=\"bemvindo\">Seja bem vindo(a), "+nome+"</h4>");
+    		}
+		%>
+    <h1 class="intro"><u>Blogão do Massa</u></h1>
     <div class="row">
     	<div class="col-8 offset-2">
 			<%
