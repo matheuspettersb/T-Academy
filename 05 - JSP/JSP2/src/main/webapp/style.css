@@ -80,17 +80,22 @@
 .redireciona:link, .redireciona:hover, .redireciona:active, .redireciona:visited{
 	text-decoration:none;
 	color:black;	
-}
+	}
 
 #bemvindo{
 	margin-left:20px;
 	margin-top:10px;
 	color:green;
-}
+	}
 
+.mensagem{
+	margin-top:60px;
+	padding:10px;
+	}
 
-
-
+.pesquisa{
+	margin-top:30px;
+	}
 
 
 

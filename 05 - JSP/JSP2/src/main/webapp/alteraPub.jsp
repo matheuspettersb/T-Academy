@@ -28,7 +28,7 @@
 		//altera
 		ps.execute();
 		
-		response.sendRedirect("gerenciar.jsp");
+		response.sendRedirect("admin.jsp");
 	%>
 </body>
 </html>

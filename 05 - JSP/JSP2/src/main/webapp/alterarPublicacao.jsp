@@ -11,13 +11,19 @@
 <script src="script.js"></script>
 </head>
 <body>
+	<% 
+		String nome = (String)session.getAttribute("usuario");
+	    	if (nome==null || !nome.equals("admin")){
+				response.sendRedirect("mensagens.jsp?codigo=1");
+	    	}	
+    %>
 	<nav class="navbar navbar-expand-lg bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.jsp">Blogão do Massa</a>
             <a class="nav-link" href="index.jsp">Home</a>
             <a class="nav-link" href="gerenciar.jsp">Gerenciar publicações</a>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
+            <form  action="pesquisa.jsp" class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search" name="termo">
                 <button class="btn btn-outline-light" type="submit">Pesquisar</button>
             </form>
         </div>

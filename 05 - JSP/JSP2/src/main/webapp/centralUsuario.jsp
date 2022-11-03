@@ -11,14 +11,19 @@
 <script src="script.js"></script>
 </head>
 <body>
+
+	<%	    	
+	String nome = (String)session.getAttribute("usuario");
+	if(nome==null || !nome.equals("admin")){
+	%>
 	<nav class="navbar navbar-expand-lg bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.jsp">Blogão do Massa</a>
             <a class="nav-link" href="index.jsp">Home</a>
             <a class="nav-link" href="todasPublicacoes.jsp">Todas as Publicações</a>
             <a class="nav-link" href="centralUsuario.jsp">Central do Usuário</a>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
+            <form  action="pesquisa.jsp" class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search" name="termo">
                 <button class="btn btn-outline-light" type="submit">Pesquisar</button>
             </form>
         </div>
@@ -27,7 +32,7 @@
     	<div class="col-6 offset-3">
     		<div class="card" id="cardCentral">
     		<%
-	    		String nome = (String)session.getAttribute("usuario");
+				nome = (String)session.getAttribute("usuario");
 	    		if (nome==null){
     		%>
     			<form id="forms" action="loginUser.jsp">
@@ -48,11 +53,6 @@
 					<button class="btn btn-primary" id="botao">Cadastrar-se</button>
     			</form>
     		<%
-	    		} else if(nome.equals("admin")){
-    		%>	
-    			<h5>Deseja deslogar?</h5>
-    			<a href="deslogar.jsp"><button class="btn btn-danger">Deslogar</button></a>
-    		<%
 	    		} else {
     		%>
     			<h5>Deseja deslogar?</h5>
@@ -68,7 +68,32 @@
     			</form>
     		<%
 	    		}
+		} else {
     		%>
+    		%>
+	<nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.jsp">Blogão do Massa</a>
+        <a class="nav-link" href="index.jsp">Home</a>
+        <a class="nav-link" href="admin.jsp">Gerenciar publicações</a>
+        <a class="nav-link" href="centralUsuario.jsp">Central do Usuário</a>
+        <form  action="pesquisa.jsp" class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search" name="termo">
+                <button class="btn btn-outline-light" type="submit">Pesquisar</button>
+        </form>
+    </div>
+	</nav>
+	<div class="row">
+    	<div class="col-6 offset-3">
+    		<div class="card" id="cardCentral">
+				<h5>Deseja deslogar?</h5>
+		    	<a href="deslogar.jsp"><button class="btn btn-danger">Deslogar</button></a>
+    		</div>
+    	</div>
+    </div>
+    <%
+		}
+    %>
     		</div>
     	</div>
     </div>

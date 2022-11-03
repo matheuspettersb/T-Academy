@@ -1,3 +1,6 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="pacotao.Conexao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -11,14 +14,20 @@
 <script src="script.js"></script>
 </head>
 <body>
-	<!-- mexer em tudo aqui ainda, "TEM ERRO" > fazer todas as funções de adm -->
+	<% 
+		String nome = (String)session.getAttribute("usuario");
+	    	if (nome==null || !nome.equals("admin")){
+				response.sendRedirect("mensagens.jsp?codigo=1");
+	    	}	
+    %>
 	<nav class="navbar navbar-expand-lg bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.jsp">Blogão do Massa</a>
             <a class="nav-link" href="index.jsp">Home</a>
-            <a class="nav-link" href="gerenciar.jsp">Gerenciar publicações</a>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
+            <a class="nav-link" href="admin.jsp">Gerenciar publicações</a>
+            <a class="nav-link" href="centralUsuario.jsp">Central do Usuário</a>
+            <form  action="pesquisa.jsp" class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search" name="termo">
                 <button class="btn btn-outline-light" type="submit">Pesquisar</button>
             </form>
         </div>
@@ -61,9 +70,9 @@
 	    				<a href="publicacoes.jsp?codigo=<%out.print(rs.getInt(1));%>" class="btn btn-outline-dark">Ver publicação</a>
 	    			</div>
 	    		</div>
-	    		<%
+	    	<%
 				}
-	    		%>
+	    	%>
     		</div>
     	</div>
     </div>

@@ -11,11 +11,12 @@
 </head>
 <body>
 	<%
-		String usuario = request.getParameter("nome");
+		String usuario = request.getParameter("usuario");
 		String senha = request.getParameter("senha");
 		Conexao c = new Conexao();
 		
-		if(usuario.equals("admin") && senha.equals("admin")){
+		
+		if(usuario.equals("admin") && senha.equals("admin")) {
 		    session.setAttribute("usuario", usuario);
 		    response.sendRedirect("admin.jsp");
 		} else {
@@ -38,21 +39,22 @@
 				rs.next();
 				out.print(rs.getString(1)+" "+usuario+"<br>");
 				out.print(rs.getString(2)+" "+senha+"<br>");
-				out.print(rs.getString(3)+"<br>");
-				
-				if (usuario.equals(rs.getString(1)) && senha.equals(rs.getString(2)) && rs.getInt(3) == 0) {
+				out.print(rs.getInt(3)+"<br>");
+				if (rs.getInt(3) == 1){
+					//banido
+					response.sendRedirect("mensagens.jsp?codigo=3");
+				} else if (usuario.equals(rs.getString(1)) && senha.equals(rs.getString(2))) {
+					//conecta
 					session.setAttribute("usuario", usuario);
 					response.sendRedirect("index.jsp");
-					out.print("0");
+				} else {
+				//nome ou senha errados
+				response.sendRedirect("mensagens.jsp?codigo=4");
 				}
-				out.print("1");
 			} else {
-				//mensagem usuario inválido
-				out.print("2");
+				response.sendRedirect("mensagens.jsp?codigo=4");
 			}
 		}
-		out.print("3");
-		//response.sendRedirect("index.jsp");
 	%>
 </body>
 </html>

@@ -16,8 +16,9 @@ CREATE TABLE postagens(
     admin 	bool
 );
 # 0 = false, 1 = true
+
 INSERT INTO usuarios values ("admin", "admin", 0, 1);
-    
+
 CREATE TABLE comentarios(
 	cd_comentario 	INT PRIMARY KEY AUTO_INCREMENT,
     comentario 		VARCHAR(500),
@@ -32,12 +33,10 @@ CREATE TABLE comentarios(
     select * from postagens;
     select * from comentarios;
 	select * from usuarios;
-    UPDATE usuarios SET nome = "a", senha = "a" WHERE nome = "asd";
     
-    SELECT COUNT(nome) FROM usuarios WHERE nome = "amogus";
-	#drop table comentarios;
-    #drop table postagens;
-    #drop table usuarios;
+	drop table comentarios;
+	drop table postagens;
+    drop table usuarios;
 DROP DATABASE jsp2;
 
 

@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Blogão do Massa - Gerenciamento</title>
+<title>Blogão do Massa - Todos os Posts</title>
 <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <link rel="stylesheet" href="style.css">
@@ -20,8 +20,8 @@
             <a class="nav-link" href="index.jsp">Home</a>
             <a class="nav-link" href="todasPublicacoes.jsp">Todas as Publicações</a>
             <a class="nav-link" href="centralUsuario.jsp">Central do Usuário</a>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
+            <form  action="pesquisa.jsp" class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search" name="termo">
                 <button class="btn btn-outline-light" type="submit">Pesquisar</button>
             </form>
         </div>
