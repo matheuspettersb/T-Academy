@@ -1,0 +1,64 @@
+Artistas:
+{
+    "nome": "Paramore"
+}
+{
+    "nome": "Hozier"
+}
+{
+    "nome": "Iron Master"
+}
+{
+    "nome": "EDEN"
+}
+{
+    "nome": "Yun Li"
+}
+
+
+Musicas:
+{
+    "nome": "Take Me To Church",
+    "link": "https://www.youtube.com/watch?v=MYSVMgRr6pw"
+}
+{
+  "nome": "Circles",
+  "link": "https://www.youtube.com/watch?v=fP8ElyrwtEc"
+}
+{
+  "nome": "Drowning",
+  "link": "https://www.youtube.com/watch?v=IKaNodcBiLA"
+}
+{
+  "nome": "voce sabia",
+  "link": "https://www.youtube.com/watch?v=sPJsURyGK5U"
+}
+{
+  "nome": "Valsa",
+  "link": "https://www.youtube.com/watch?v=pnqa_LmIChc"
+}
+{
+  "nome": "mil* hunter$",
+  "link": "https://www.youtube.com/watch?v=RWiS_j2DjJA"
+}
+{
+  "nome": "Encantriz",
+  "link": "https://www.youtube.com/watch?v=Rq2mSeaevgs"
+}
+{
+  "nome": "Não Havia Mais o Ben",
+  "link": "https://www.youtube.com/watch?v=kO0BUbggQ6o"
+}
+
+Playlists:
+
+
+
+
+
+
+artistaModelo am = acao.slaoq
+am.getmusicas.add(obj)
+ver no git do ralf
+acao.save(am)
+return am;

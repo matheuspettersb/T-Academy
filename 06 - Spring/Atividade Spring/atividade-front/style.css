@@ -1,0 +1,19 @@
+.navbar{
+    background-color: #6300CC;
+    padding:10px;
+}
+
+.navbar-brand:hover{
+    transition: 0.3s;
+    color:black;
+}
+
+.navbar-brand, .nav-link{
+    color:#ffffff;
+}
+
+
+/* .nav-item{
+    width: 130px;
+    text-align: center;
+}*/
