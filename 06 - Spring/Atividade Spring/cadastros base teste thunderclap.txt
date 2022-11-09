@@ -51,7 +51,20 @@ Musicas:
 }
 
 Playlists:
-
+{
+  "nome":"Viktor Grindset",
+  "musicas":[
+    {
+      "codigoMusica":11,
+      "nome": "Não Havia Mais o Ben",
+      "link": "https://www.youtube.com/watch?v=kO0BUbggQ6o"
+    },
+    {
+      "codigoMusica":8,
+      "nome": "Valsa",
+      "link": "https://www.youtube.com/watch?v=pnqa_LmIChc"
+    }]
+}
 
 
 

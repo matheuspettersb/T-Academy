@@ -7,5 +7,6 @@ import br.com.projeto.atividade.modelo.MusicaModelo;
 
 @Repository
 public interface MusicaRepositorio extends CrudRepository<MusicaModelo, Long>{
-    
+    MusicaModelo findByCodigoMusica(long codigo);
+
 }

@@ -7,5 +7,5 @@ import br.com.projeto.atividade.modelo.PlaylistModelo;
 
 @Repository
 public interface PlaylistRepositorio extends CrudRepository<PlaylistModelo, Long>{
-    
+    PlaylistModelo findByCodigo(long codigo);
 }

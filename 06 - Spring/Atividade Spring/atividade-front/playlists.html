@@ -14,19 +14,34 @@
 <body>
     <nav class="navbar navbar-expand-lg container-fluid">
         <div class="container-fluid">
-            <a class="navbar-brand" href="minhasPlaylists.html">Musicanções</a>
+            <a class="navbar-brand" href="playlists.html">Musicanções</a>
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="minhasPlaylists.html">Minhas Playlists</a></li>
+                <li class="nav-item"><a class="nav-link" href="playlists.html">Playlists</a></li>
                 <li class="nav-item"><a class="nav-link" href="gerenciar.html">Gerenciar</a></li>
                 <li class="nav-item"><a class="nav-link" href="login.html">Central do Usuário</a></li>
             </ul>
         </div>
     </nav>
-    <div class="row">
-        <div class="col-8 offset-2">
-            <!-- danonao grosso -->
+    <div class="col-8 offset-2">
+        <h1 id="titulo">Gerenciar Playlists</h1>
+        <div class="card">
+            <h3>Cadastrar:</h3>
+            <div>
+                <form action="">
+                    <label for="nome">Nome:</label>
+                    <input class="form-control" name="nome" id="nome" type="text">
+                    <button class="btn btn-primary" onclick="cadastrar()" id="btnCadastrar">Cadastrar</button>
+                    <button class="btn btn-warning" onclick="alterar()" id="btnAlterar">Alterar</button>
+                    <button class="btn btn-danger" onclick="excluir()" id="btnExcluir">Excluir</button>
+                </form>
+            </div>
+        </div>
+        <div class="card">
+            <h3><u>Playlists Cadastradas:</u></h3>
+            <div id="playlists"></div>
         </div>
     </div>
+    <script>listarPlaylists()</script>
 </body>
 </html>
