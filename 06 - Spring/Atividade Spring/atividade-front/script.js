@@ -36,8 +36,7 @@ async function listarMusicas(){
         espaco.innerHTML += `<div class="card">
                                 <h4>${musica.nome}<h4>
                                 <a target="blank"class="btn btn-success" href="${musica.link}">Ouvir</a>
-                                <button class="btn btn-warning" onclick="alterar(${musica.codigo})">Alterar</button>
-                                <button class="btn btn-danger" onclick="excluir(${musica.codigo})">Excluir</button>
+                                <button class="btn btn-danger" onclick="selecionar(${musica.codigo})">Excluir</button>
                             </div>`
     }
 }
@@ -53,7 +52,7 @@ async function listarArtistas(){
         let artista = retJson;
         espaco.innerHTML += `<div class="card">
                                 <h4>${artista.nome}<h4>
-                                <button class="btn btn-danger" onclick="excluir(${artista.codigo})">Excluir</button>
+                                <button class="btn btn-success" onclick="selecionarArtista(${artista.codigo})">Selecionar</button>
                             </div>`
     }
 }
@@ -69,7 +68,7 @@ async function listarPlaylists(){
         let playlist = retJson;
         espaco.innerHTML += `<div class="card">
                                 <h4>${playlist.nome}<h4>
-                                <button class="btn btn-danger" onclick="excluir(${playlist.codigo})">Excluir</button>
+                                <button class="btn btn-danger" onclick="selecionar(${playlist.codigo})">Excluir</button>
                             </div>`
     }
 }
@@ -80,4 +79,28 @@ function formularioPadrao(){
     document.getElementById("btnCadastrar").style.display = "inline-block";
     document.getElementById("btnAlterar").style.display = "none";
     document.getElementById("btnRemover").style.display = "none";
+}
+
+function selecionarArtista(codigo){
+    fetch(`http://localhost:8080/artista/${codigo}`)
+    .then(retorno => retorno.json())
+    .then(retJson =>{
+        
+        document.getElementById("nome").value = retJson.nome;
+        document.getElementById("codigoArtista").value=retJson.codigo;
+        document.getElementById("btnCadastrar").style.display = "none";
+        document.getElementById("btnAlterar").style.display = "inline-block";
+        document.getElementById("btnExcluir").style.display = "inline-block";
+    })
+}
+
+function alteraArtista(){
+    let nome = document.getElementById("nome").value;
+    alert(nome.length);
+    if (nome.length<1){
+        alert("O nome não pode ser vazio")
+    }else{
+        let codigo = document.getElementById("codigoArtista").value;
+    }
+
 }

@@ -1,6 +1,8 @@
 package br.com.projeto.atividade.controle;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,13 +36,19 @@ public class ArtistaControle {
     }
 
     @DeleteMapping("/{codigo}")
-    private void deletar(@PathVariable long codigo){
+    private ResponseEntity<?> deletar(@PathVariable long codigo){
         //ver se tem musica linkada pra ver se pode antes
-        acao.deleteById(codigo);
+        ArtistaModelo a = acao.findByCodigo(codigo);
+        if (a.getMusicas().size()>0){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        } else {
+            acao.deleteById(codigo);
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
     }
 
     @PutMapping("/{codigo}")
-    private ArtistaModelo alterar(@RequestBody MusicaModelo obj, @PathVariable long codigo){
+    private ArtistaModelo adicionaMusica(@RequestBody MusicaModelo obj, @PathVariable long codigo){
         ArtistaModelo a = acao.findByCodigo(codigo);
         a.getMusicas().add(obj);
         return acao.save(a);        
@@ -62,6 +70,13 @@ public class ArtistaControle {
     @GetMapping("/contar")
     public long contar(){
         return acao.count();
+    }
+
+    @PutMapping("/alteraNome/{codigo}")
+    public ArtistaModelo alterarNome(@PathVariable long codigo, @RequestBody String nome){
+        ArtistaModelo a = acao.findByCodigo(codigo);
+        a.setNome(nome);
+        return acao.save(a);
     }
 
 }
