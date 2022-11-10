@@ -28,15 +28,14 @@
         <div class="card">
             <h3>Cadastrar:</h3>
             <div>
-                <form action="">
-                    <label for="nome">Nome:</label>
-                    <input class="form-control" name="nome" id="nome" type="text">
-                    <label for="link">Link:</label>
-                    <input class="form-control" name="link" type="">
-                    <button class="btn btn-primary" onclick="cadastrar()" id="btnCadastrar">Cadastrar</button>
-                    <button class="btn btn-warning" onclick="alterar()" id="btnAlterar">Alterar</button>
-                    <button class="btn btn-danger" onclick="excluir()" id="btnExcluir">Excluir</button>
-                </form>
+                <label for="nome">Nome:</label>
+                <input class="form-control" name="nome" id="nome" type="text">
+                <label for="link">Link:</label>
+                <input class="form-control" name="link" type="">
+                <input type="hidden" id="codigo">
+                <button class="btn btn-primary" onclick="cadastrarMusica()" id="btnCadastrar">Cadastrar</button>
+                <button class="btn btn-warning" onclick="alterarMusica()" id="btnAlterar">Alterar</button>
+                <button class="btn btn-danger" onclick="excluirMusica()" id="btnExcluir">Excluir</button>
             </div>
         </div>
         <div class="card">

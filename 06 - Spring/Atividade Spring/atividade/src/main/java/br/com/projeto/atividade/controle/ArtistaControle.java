@@ -66,10 +66,19 @@ public class ArtistaControle {
         return acao.findByCodigo(codigo);
     }
 
+    @GetMapping("/disponivel/{codigo}")
+    public ResponseEntity<?> disponivel(@PathVariable long codigo){
+        if (acao.findByCodigo(codigo) == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } else {
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+    }
+
     //contar
     @GetMapping("/contar")
     public long contar(){
-        return acao.count();
+        return acao.counter();
     }
 
     @PutMapping("/alteraNome/{codigo}")
