@@ -1,0 +1,25 @@
+<form [formGroup]="formulario">
+    <input type="text" class="form-control" formControlName="produto" placeholder="Produto">
+    <input type="number" class="form-control" formControlName="valor" placeholder="Valor">
+    <input type="button" (click)="cadastrar()" class="btn btn-primary" value="Cadastrar">
+</form>
+
+<!-- tabela -->
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Produto</th>
+            <th>Valor</th>
+            <th>Remover</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let v of vetor; index as i">
+            <td>{{i+1}}</td>
+            <td>{{v.produto}}</td>
+            <td>{{v.valor}}</td>
+            <td><button class="btn btn-danger" (click)="remover(v.id)">Remover</button></td>
+        </tr>
+    </tbody>
+</table>

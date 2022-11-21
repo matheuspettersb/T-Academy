@@ -1,0 +1,8 @@
+criar projetos:
+*ng new nome-projeto
+
+executar projetos:
+*ng serve
+*ng s
+*ng serv --open
+*ng s --o 

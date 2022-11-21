@@ -1,0 +1,24 @@
+{
+  "produtos": [
+    {
+      "produto": "notebook delle",
+      "valor": 2500,
+      "id": 1
+    },
+    {
+      "produto": "notebook dalle",
+      "valor": 2500,
+      "id": 2
+    },
+    {
+      "produto": "notebook dolle",
+      "valor": 2500,
+      "id": 3
+    },
+    {
+      "produto": "notebook dille",
+      "valor": 2500,
+      "id": 4
+    }
+  ]
+}
